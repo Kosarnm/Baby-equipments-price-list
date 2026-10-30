@@ -1,0 +1,38 @@
+name: Check Prisjakt prices
+
+on:
+  schedule:
+    - cron: '0 6 * * *'      # every day, 07:00 Norwegian time (06:00 UTC)
+  push:
+    paths: ['baby-list.csv']  # re-check right after the list is edited
+  workflow_dispatch:          # "Run workflow" button on the Actions tab
+
+permissions:
+  contents: write
+
+concurrency:
+  group: prices
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    env:
+      TZ: Europe/Oslo
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch prices
+        shell: pwsh
+        run: ./track-prices.ps1 -JsonFile docs/data.json -ReportFile report.html -NoOpen
+
+      - name: Save results
+        if: always()
+        run: |
+          git config user.name "price-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/data.json
+          if [ -f price-history.csv ]; then git add price-history.csv; fi
+          git diff --cached --quiet || git commit -m "Prices $(date +'%Y-%m-%d %H:%M')"
+          git pull --rebase
+          git push

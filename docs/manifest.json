@@ -1,0 +1,9 @@
+{
+  "name": "Baby Prices",
+  "short_name": "Baby Prices",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#faf8f5",
+  "theme_color": "#c2603d",
+  "icons": [{ "src": "icon.png", "sizes": "512x512", "type": "image/png" }]
+}

@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Baby Prices</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Baby Prices">
+<meta name="theme-color" content="#faf8f5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1c1b19" media="(prefers-color-scheme: dark)">
+<link rel="apple-touch-icon" href="icon.png">
+<link rel="manifest" href="manifest.json">
+<style>
+:root{--bg:#faf8f5;--card:#fff;--fg:#2b2a28;--muted:#77736c;--line:#ebe6df;--accent:#c2603d;--good:#2f7d4f;--bad:#b3403a;--chip:#f1ece5}
+@media (prefers-color-scheme:dark){:root{--bg:#1c1b19;--card:#262522;--fg:#ece9e4;--muted:#a19c94;--line:#3a3834;--accent:#e08a66;--good:#6cc290;--bad:#e2847e;--chip:#33312d}}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif}
+header{padding:calc(env(safe-area-inset-top) + 18px) 16px 8px;max-width:680px;margin:0 auto}
+h1{margin:0;font-size:28px;letter-spacing:-.02em}
+.sub{color:var(--muted);font-size:13px}
+.countdown{display:flex;align-items:baseline;gap:8px;margin:14px 0 4px}
+.countdown b{font-size:40px;line-height:1;color:var(--accent)}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0 4px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px 12px}
+.stat b{display:block;font-size:19px}.stat span{font-size:12px;color:var(--muted)}
+.filters{display:flex;gap:8px;overflow-x:auto;padding:10px 16px;max-width:680px;margin:0 auto;position:sticky;top:0;background:var(--bg);z-index:2;scrollbar-width:none}
+.filters::-webkit-scrollbar{display:none}
+.filters button{flex:none;border:1px solid var(--line);background:var(--card);color:var(--fg);border-radius:99px;padding:7px 14px;font:inherit;font-size:14px}
+.filters button.on{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+main{max-width:680px;margin:0 auto;padding:0 16px calc(env(safe-area-inset-bottom) + 40px)}
+h2{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:22px 4px 8px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;margin-bottom:8px;overflow:hidden}
+.row{display:flex;gap:12px;align-items:center;padding:12px 14px;cursor:pointer}
+.row .name{flex:1;min-width:0}
+.row .name div:first-child{font-weight:550}
+.row .name .sub{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.price{text-align:right;white-space:nowrap}
+.price b{display:block}
+.down{color:var(--good)}.up{color:var(--bad)}
+.tags{display:flex;gap:4px;flex-wrap:wrap;margin-top:4px}
+.tag{font-size:11px;padding:1px 7px;border-radius:99px;background:var(--chip)}
+.tag.bw{background:var(--fg);color:var(--bg)}.tag.hit,.tag.done{background:var(--good);color:#fff}.tag.low{background:var(--accent);color:#fff}
+.card.bought{opacity:.5}
+.detail{display:none;padding:0 14px 14px;border-top:1px solid var(--line)}
+.card.open .detail{display:block}
+.detail svg{width:100%;height:120px;display:block;margin:12px 0 4px;color:var(--accent)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:8px 0}
+.grid div{background:var(--chip);border-radius:10px;padding:8px}
+.grid b{display:block;font-size:15px}.grid span{font-size:11px;color:var(--muted)}
+.note{font-size:13px;color:var(--muted);font-style:italic;margin:8px 0}
+a.btn{display:block;text-align:center;padding:11px;border-radius:12px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;margin-top:8px}
+a.btn.ghost{background:var(--chip);color:var(--fg)}
+.banner{background:var(--chip);border-radius:12px;padding:10px 12px;font-size:14px;margin-top:12px}
+.banner.err{background:var(--bad);color:#fff}
+.empty{color:var(--muted);text-align:center;padding:30px 0}
+</style>
+</head>
+<body>
+<header>
+  <h1>Baby prices</h1>
+  <div class="sub" id="updated">Loading&hellip;</div>
+  <div class="countdown"><b id="days">&ndash;</b><span>days to Black Friday (27 Nov)</span></div>
+  <div class="stats">
+    <div class="stat"><b id="sLeft">&ndash;</b><span>items still to buy</span></div>
+    <div class="stat"><b id="sNow">&ndash;</b><span>tracked items, today's price</span></div>
+    <div class="stat"><b id="sSaved">&ndash;</b><span>change since first check</span></div>
+    <div class="stat"><b id="sHits">&ndash;</b><span>at or below target</span></div>
+  </div>
+  <div id="banner"></div>
+</header>
+<nav class="filters" id="filters">
+  <button data-f="todo" class="on">To buy</button>
+  <button data-f="tracked">Tracked</button>
+  <button data-f="bw">Black Week</button>
+  <button data-f="hit">Target hit</button>
+  <button data-f="all">All</button>
+  <button data-f="bought">Bought</button>
+</nav>
+<main id="list"></main>
+<script>
+const nb = new Intl.NumberFormat('nb-NO', {maximumFractionDigits: 0});
+const kr = v => v == null ? '–' : nb.format(v) + ' kr';
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+// Works out the repo from the GitHub Pages address (owner.github.io/repo/).
+const owner = location.hostname.split('.')[0];
+const repo = location.pathname.split('/').filter(Boolean)[0] || '';
+const editUrl = `https://github.com/${owner}/${repo}/edit/main/baby-list.csv`;
+
+let data = null;
+let filter = 'todo';
+try { filter = localStorage.getItem('filter') || filter; } catch (e) {}
+
+function enrich(it) {
+  const h = it.history || [];
+  it.now = h.length ? h[h.length - 1].price : null;
+  it.first = h.length ? h[0].price : null;
+  it.low = h.length ? Math.min(...h.map(p => p.price)) : null;
+  it.lowDate = h.length ? h.find(p => p.price === it.low).date.slice(0, 10) : '';
+  it.shop = h.length ? h[h.length - 1].shop : '';
+  it.product = h.length ? h[h.length - 1].product : '';
+  it.hit = it.now != null && it.target != null && it.now <= it.target && !it.bought;
+  return it;
+}
+
+function chart(h) {
+  if (h.length < 2) return '<div class="sub" style="margin-top:12px">The price chart appears after the second daily check.</div>';
+  const W = 320, H = 120, pad = 8;
+  const vals = h.map(p => p.price), min = Math.min(...vals), max = Math.max(...vals), span = Math.max(max - min, 1);
+  const pts = vals.map((v, i) => [pad + i * (W - 2 * pad) / (vals.length - 1), H - pad - (v - min) * (H - 2 * pad) / span]);
+  const line = pts.map(p => p.map(n => n.toFixed(1)).join(',')).join(' ');
+  const area = `${pad},${H} ${line} ${W - pad},${H}`;
+  return `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none">
+    <polygon points="${area}" fill="currentColor" opacity=".12"/>
+    <polyline points="${line}" fill="none" stroke="currentColor" stroke-width="2" vector-effect="non-scaling-stroke"/>
+  </svg><div class="sub" style="display:flex;justify-content:space-between"><span>${esc(h[0].date.slice(0,10))}</span><span>${kr(min)} – ${kr(max)}</span><span>${esc(h[h.length-1].date.slice(0,10))}</span></div>`;
+}
+
+function card(it, i) {
+  const tags = [];
+  if (it.bought) tags.push('<span class="tag done">Bought</span>');
+  if (it.hit) tags.push('<span class="tag hit">Target hit!</span>');
+  if (it.history.length > 1 && it.now <= it.low && !it.bought) tags.push('<span class="tag low">Lowest so far</span>');
+  if (it.blackWeek) tags.push('<span class="tag bw">Black Week</span>');
+  if (it.priority === 'Nice') tags.push('<span class="tag">Nice to have</span>');
+  let change = '';
+  if (it.now != null && it.first && it.now !== it.first) {
+    const pct = Math.round((it.now - it.first) / it.first * 100);
+    change = `<div class="sub ${pct < 0 ? 'down' : 'up'}">${pct > 0 ? '+' : ''}${pct} %</div>`;
+  }
+  const search = 'https://www.prisjakt.no/search?search=' + encodeURIComponent(it.item.replace(/\s*\(.*\)/, ''));
+  return `<div class="card${it.bought ? ' bought' : ''}" data-i="${i}">
+    <div class="row">
+      <div class="name"><div>${esc(it.item)}${it.qty > 1 ? ` <span class="sub">× ${it.qty}</span>` : ''}</div>
+        <div class="sub">${esc(it.product || (it.url ? 'Waiting for first check' : 'No product chosen yet'))}</div>
+        <div class="tags">${tags.join('')}</div></div>
+      <div class="price"><b>${it.now != null ? kr(it.now) : ''}</b>${change}</div>
+    </div>
+    <div class="detail">
+      ${it.url ? chart(it.history) + `
+      <div class="grid">
+        <div><b>${kr(it.low)}</b><span>lowest ${esc(it.lowDate)}</span></div>
+        <div><b>${kr(it.first)}</b><span>first seen</span></div>
+        <div><b>${kr(it.target)}</b><span>your target</span></div>
+      </div>
+      ${it.shop ? `<div class="sub">Cheapest today: ${esc(it.shop)}</div>` : ''}` : ''}
+      ${it.notes ? `<div class="note">${esc(it.notes)}</div>` : ''}
+      ${it.url ? `<a class="btn" href="${esc(it.url)}" target="_blank" rel="noopener">Open on Prisjakt</a>`
+               : `<a class="btn" href="${search}" target="_blank" rel="noopener">Find on Prisjakt</a>
+                  <a class="btn ghost" href="${editUrl}" target="_blank" rel="noopener">Paste the link into the list</a>`}
+    </div>
+  </div>`;
+}
+
+function render() {
+  const items = data.items;
+  const todo = items.filter(i => !i.bought);
+  const tracked = todo.filter(i => i.now != null);
+  const now = tracked.reduce((s, i) => s + i.now * i.qty, 0);
+  const saved = tracked.reduce((s, i) => s + (i.first - i.now) * i.qty, 0);
+  document.getElementById('sLeft').textContent = `${todo.length} / ${items.length}`;
+  document.getElementById('sNow').textContent = kr(now);
+  const sv = document.getElementById('sSaved');
+  sv.textContent = (saved > 0 ? '−' : saved < 0 ? '+' : '') + kr(Math.abs(saved));
+  sv.className = saved > 0 ? 'down' : saved < 0 ? 'up' : '';
+  document.getElementById('sHits').textContent = items.filter(i => i.hit).length;
+
+  const keep = {
+    todo: i => !i.bought, tracked: i => !!i.url, bw: i => i.blackWeek && !i.bought,
+    hit: i => i.hit, all: () => true, bought: i => i.bought
+  }[filter] || (() => true);
+  const groups = {};
+  items.forEach((it, i) => { if (keep(it)) (groups[it.category] ||= []).push(card(it, i)); });
+  const html = Object.entries(groups).map(([c, cards]) => `<h2>${esc(c)}</h2>${cards.join('')}`).join('');
+  document.getElementById('list').innerHTML = html || '<div class="empty">Nothing here yet.</div>';
+  document.querySelectorAll('#filters button').forEach(b => b.classList.toggle('on', b.dataset.f === filter));
+}
+
+document.getElementById('list').addEventListener('click', e => {
+  if (e.target.closest('a')) return;
+  const c = e.target.closest('.card');
+  if (c) c.classList.toggle('open');
+});
+document.getElementById('filters').addEventListener('click', e => {
+  const b = e.target.closest('button');
+  if (!b) return;
+  filter = b.dataset.f;
+  try { localStorage.setItem('filter', filter); } catch (e) {}
+  render();
+});
+
+const days = Math.max(0, Math.ceil((new Date('2026-11-27T00:00:00+01:00') - new Date()) / 864e5));
+document.getElementById('days').textContent = days;
+
+fetch('data.json?t=' + Date.now()).then(r => r.json()).then(d => {
+  data = d;
+  d.items.forEach(enrich);
+  document.getElementById('updated').innerHTML =
+    `Prices checked ${esc(d.updated)} · <a href="${editUrl}" target="_blank" rel="noopener" style="color:var(--accent)">Edit list</a>`;
+  const b = document.getElementById('banner');
+  if (d.checked && !d.ok) b.innerHTML = '<div class="banner err">The last check could not read any prices from Prisjakt.</div>';
+  else if (!d.checked) b.innerHTML = '<div class="banner">No products tracked yet. Tap an item, find it on Prisjakt and paste the link into the list.</div>';
+  render();
+}).catch(() => {
+  document.getElementById('updated').textContent = 'Could not load the price data.';
+});
+</script>
+</body>
+</html>
