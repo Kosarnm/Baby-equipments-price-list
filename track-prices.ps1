@@ -111,7 +111,7 @@ if ($JsonFile) {
     $items = foreach ($row in $list) {
         $url = $row.PrisjaktUrl.Trim()
         [ordered]@{
-            category = $row.Category; item = $row.Item; priority = $row.Priority
+            category = $row.Category; item = $row.Item; search = $row.PrisjaktSearch; priority = $row.Priority
             blackWeek = ($row.BlackWeek -eq 'Yes'); qty = [Math]::Max(1, [int]("0$($row.Qty)" -replace '\D', ''))
             url = $url; target = $(if ($row.TargetPrice -match '\d') { [double]($row.TargetPrice -replace '[^\d.]', '') } else { $null })
             bought = ($row.Bought -match '^(y|yes|ja|x|1|true)$'); notes = $row.Notes
@@ -181,7 +181,7 @@ foreach ($cat in ($list | Group-Object Category)) {
             $label = if ($prod) { $prod } else { 'Prisjakt' }
             $itemCell += "<div class='sub'><a href='$(HtmlEnc $url)' target='_blank'>$(HtmlEnc $label)</a></div>"
         } else {
-            $q = [Uri]::EscapeDataString(($row.Item -replace '\s*\(.*\)', ''))
+            $q = [Uri]::EscapeDataString($(if ($row.PrisjaktSearch) { $row.PrisjaktSearch } else { $row.Item -replace '\s*\(.*\)', '' }))
             $itemCell += "<div class='sub'><a href='https://www.prisjakt.no/search?search=$q' target='_blank'>Find on Prisjakt &rarr;</a></div>"
         }
         if ($row.Notes) { $itemCell += "<div class='note'>$(HtmlEnc $row.Notes)</div>" }

@@ -130,7 +130,7 @@ function card(it, i) {
     const pct = Math.round((it.now - it.first) / it.first * 100);
     change = `<div class="sub ${pct < 0 ? 'down' : 'up'}">${pct > 0 ? '+' : ''}${pct} %</div>`;
   }
-  const search = 'https://www.prisjakt.no/search?search=' + encodeURIComponent(it.item.replace(/\s*\(.*\)/, ''));
+  const search = 'https://www.prisjakt.no/search?search=' + encodeURIComponent(it.search || it.item.replace(/\s*\(.*\)/, ''));
   return `<div class="card${it.bought ? ' bought' : ''}" data-i="${i}">
     <div class="row">
       <div class="name"><div>${esc(it.item)}${it.qty > 1 ? ` <span class="sub">× ${it.qty}</span>` : ''}</div>
