@@ -1,7 +1,7 @@
 {
-  "updated": "2026-10-30 17:10",
-  "checked": 16,
-  "ok": 16,
+  "updated": "2026-10-30 17:14",
+  "checked": 17,
+  "ok": 17,
   "items": [
     {
       "category": "Transport",
@@ -104,6 +104,12 @@
           "price": 13949.0,
           "shop": "Kjøpbarnevogn",
           "product": "Bugaboo Fox 5 Renew"
+        },
+        {
+          "date": "2026-10-30 17:14",
+          "price": 13949.0,
+          "shop": "Kjøpbarnevogn",
+          "product": "Bugaboo Fox 5 Renew"
         }
       ]
     },
@@ -187,6 +193,12 @@
         },
         {
           "date": "2026-10-30 17:10",
+          "price": 1999.0,
+          "shop": "OhDearBaby",
+          "product": "Easygrow Fnugg Vognpose"
+        },
+        {
+          "date": "2026-10-30 17:14",
           "price": 1999.0,
           "shop": "OhDearBaby",
           "product": "Easygrow Fnugg Vognpose"
@@ -282,21 +294,14 @@
           "price": 1866.0,
           "shop": "Boozt.com",
           "product": "Ergobaby Omni Breeze"
+        },
+        {
+          "date": "2026-10-30 17:14",
+          "price": 1866.0,
+          "shop": "Boozt.com",
+          "product": "Ergobaby Omni Breeze"
         }
       ]
-    },
-    {
-      "category": "Transport",
-      "item": "Changing bag",
-      "search": "stellebag",
-      "priority": "Nice",
-      "blackWeek": true,
-      "qty": 1,
-      "url": "",
-      "target": null,
-      "bought": false,
-      "notes": "Often comes with the pram",
-      "history": []
     },
     {
       "category": "Sleep",
@@ -440,6 +445,12 @@
           "price": 299.0,
           "shop": "barnashus.no",
           "product": "Stokke Sleepi Mini V3 laken, flowerecru"
+        },
+        {
+          "date": "2026-10-30 17:14",
+          "price": 299.0,
+          "shop": "barnashus.no",
+          "product": "Stokke Sleepi Mini V3 laken, flowerecru"
         }
       ]
     },
@@ -527,6 +538,12 @@
           "price": 329.0,
           "shop": "Mimmis",
           "product": "Ergobaby Swaddler Sheep"
+        },
+        {
+          "date": "2026-10-30 17:14",
+          "price": 329.0,
+          "shop": "Mimmis",
+          "product": "Ergobaby Swaddler Sheep"
         }
       ]
     },
@@ -595,6 +612,12 @@
           "price": 699.0,
           "shop": "easygrowofnorway.com",
           "product": "Easygrow Swaddle Baby Bag 0–6 Months – Safe & Soothing Sleep"
+        },
+        {
+          "date": "2026-10-30 17:14",
+          "price": 699.0,
+          "shop": "easygrowofnorway.com",
+          "product": "Easygrow Swaddle Baby Bag 0–6 Months – Safe & Soothing Sleep"
         }
       ]
     },
@@ -654,6 +677,12 @@
         },
         {
           "date": "2026-10-30 17:10",
+          "price": 5149.0,
+          "shop": "Philips",
+          "product": "Philips Premium Connected Baby Monitor SCD973/26"
+        },
+        {
+          "date": "2026-10-30 17:14",
           "price": 5149.0,
           "shop": "Philips",
           "product": "Philips Premium Connected Baby Monitor SCD973/26"
@@ -719,6 +748,12 @@
           "price": 1463.0,
           "shop": "CS MEGASTORE",
           "product": "Philips Avent Baby Monitor SCD643/26"
+        },
+        {
+          "date": "2026-10-30 17:14",
+          "price": 1463.0,
+          "shop": "CS MEGASTORE",
+          "product": "Philips Avent Baby Monitor SCD643/26"
         }
       ]
     },
@@ -775,6 +810,12 @@
           "price": 1199.0,
           "shop": "",
           "product": "Leander Matty Stellematte 50x70"
+        },
+        {
+          "date": "2026-10-30 17:14",
+          "price": 1199.0,
+          "shop": "",
+          "product": "Leander Matty Stellematte 50x70"
         }
       ]
     },
@@ -825,6 +866,32 @@
           "price": 199.0,
           "shop": "Mimmis",
           "product": "Leander Topper"
+        },
+        {
+          "date": "2026-10-30 17:14",
+          "price": 199.0,
+          "shop": "Mimmis",
+          "product": "Leander Topper"
+        }
+      ]
+    },
+    {
+      "category": "Changing",
+      "item": "Portable changing mat",
+      "search": "vikbar stellematte",
+      "priority": "Nice",
+      "blackWeek": true,
+      "qty": 1,
+      "url": "https://www.prisjakt.no/product.php?p=13951143",
+      "target": null,
+      "bought": false,
+      "notes": "Done by Deer foldable changing mat - for changes away from home",
+      "history": [
+        {
+          "date": "2026-10-30 17:14",
+          "price": 171.0,
+          "shop": "Boozt.com",
+          "product": "Done By Deer Vikbar Stellematte"
         }
       ]
     },
@@ -874,6 +941,12 @@
         },
         {
           "date": "2026-10-30 17:10",
+          "price": 299.0,
+          "shop": "barnashus.no",
+          "product": "Bleiebøtte, white"
+        },
+        {
+          "date": "2026-10-30 17:14",
           "price": 299.0,
           "shop": "barnashus.no",
           "product": "Bleiebøtte, white"
@@ -934,6 +1007,12 @@
           "price": 449.0,
           "shop": "",
           "product": "Stokke Flexi Bath"
+        },
+        {
+          "date": "2026-10-30 17:14",
+          "price": 449.0,
+          "shop": "",
+          "product": "Stokke Flexi Bath"
         }
       ]
     },
@@ -975,6 +1054,12 @@
         },
         {
           "date": "2026-10-30 17:10",
+          "price": 100.0,
+          "shop": "",
+          "product": "Stokke Flexi Bath Newborn Support"
+        },
+        {
+          "date": "2026-10-30 17:14",
           "price": 100.0,
           "shop": "",
           "product": "Stokke Flexi Bath Newborn Support"
@@ -1042,6 +1127,12 @@
           "price": 299.0,
           "shop": "barnashus.no",
           "product": "Trimmy elektrisk negleklipper, sagegreen"
+        },
+        {
+          "date": "2026-10-30 17:14",
+          "price": 299.0,
+          "shop": "barnashus.no",
+          "product": "Trimmy elektrisk negleklipper, sagegreen"
         }
       ]
     },
@@ -1100,6 +1191,12 @@
           "price": 329.0,
           "shop": "jollyroom.no",
           "product": "Philips Avent SCF430/01 Brystpumpe Manuell"
+        },
+        {
+          "date": "2026-10-30 17:14",
+          "price": 329.0,
+          "shop": "jollyroom.no",
+          "product": "Philips Avent SCF430/01 Brystpumpe Manuell"
         }
       ]
     },
@@ -1129,6 +1226,12 @@
         },
         {
           "date": "2026-10-30 17:10",
+          "price": 1462.0,
+          "shop": "philips.no",
+          "product": "Avent Hands-free Enkel elektrisk brystpumpe"
+        },
+        {
+          "date": "2026-10-30 17:14",
           "price": 1462.0,
           "shop": "philips.no",
           "product": "Avent Hands-free Enkel elektrisk brystpumpe"
