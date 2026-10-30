@@ -33,6 +33,12 @@ function Format-Kr($value) {
 
 function HtmlEnc($s) { return [Net.WebUtility]::HtmlEncode([string]$s) }
 
+# A target price like "12000", "12 000" or "12000 kr"; anything else (e.g. a pasted link) is ignored.
+function Get-Target($text) {
+    if ("$text" -match '^\s*(\d[\d\s .]*)\s*(kr|nok)?\s*$') { return [double]($Matches[1] -replace '[^\d]', '') }
+    return $null
+}
+
 function Get-Html([string]$url) {
     $resp = Invoke-WebRequest -UseBasicParsing -Uri $url -Headers $headers -TimeoutSec 30
     # Decode as UTF-8 ourselves so Norwegian letters survive.
@@ -164,7 +170,7 @@ if ($JsonFile) {
         [ordered]@{
             category = $row.Category; item = $row.Item; search = $row.PrisjaktSearch; priority = $row.Priority
             blackWeek = ($row.BlackWeek -eq 'Yes'); qty = [Math]::Max(1, [int]("0$($row.Qty)" -replace '\D', ''))
-            url = $url; target = $(if ($row.TargetPrice -match '\d') { [double]($row.TargetPrice -replace '[^\d.]', '') } else { $null })
+            url = $url; target = (Get-Target $row.TargetPrice)
             bought = ($row.Bought -match '^(y|yes|ja|x|1|true)$'); notes = $row.Notes
             history = @($history | Where-Object { $url -and $_.Url -eq $url } | Sort-Object Date | ForEach-Object {
                 [ordered]@{ date = $_.Date; price = [double]$_.Price; shop = $_.Shop; product = $_.Product } })
@@ -212,7 +218,7 @@ foreach ($cat in ($list | Group-Object Category)) {
             }
         }
 
-        $target = if ($row.TargetPrice -match '\d') { [double]($row.TargetPrice -replace '[^\d.]', '') } else { $null }
+        $target = Get-Target $row.TargetPrice
         $badges = @()
         if ($bought) { $badges += "<span class='b done'>Bought</span>" }
         if ($row.BlackWeek -eq 'Yes') { $badges += "<span class='b bw'>Black Week</span>" }
