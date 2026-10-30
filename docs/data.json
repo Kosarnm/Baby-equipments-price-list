@@ -1,7 +1,7 @@
 {
-  "updated": "2026-10-30 16:42",
-  "checked": 13,
-  "ok": 13,
+  "updated": "2026-10-30 17:04",
+  "checked": 15,
+  "ok": 15,
   "items": [
     {
       "category": "Transport",
@@ -83,6 +83,12 @@
         },
         {
           "date": "2026-10-30 16:42",
+          "price": 13949.0,
+          "shop": "Kjøpbarnevogn",
+          "product": "Bugaboo Fox 5 Renew"
+        },
+        {
+          "date": "2026-10-30 17:04",
           "price": 13949.0,
           "shop": "Kjøpbarnevogn",
           "product": "Bugaboo Fox 5 Renew"
@@ -180,6 +186,12 @@
           "price": 1999.0,
           "shop": "OhDearBaby",
           "product": "Easygrow Fnugg Vognpose"
+        },
+        {
+          "date": "2026-10-30 17:04",
+          "price": 1999.0,
+          "shop": "OhDearBaby",
+          "product": "Easygrow Fnugg Vognpose"
         }
       ]
     },
@@ -251,6 +263,12 @@
         },
         {
           "date": "2026-10-30 16:42",
+          "price": 1866.0,
+          "shop": "Boozt.com",
+          "product": "Ergobaby Omni Breeze"
+        },
+        {
+          "date": "2026-10-30 17:04",
           "price": 1866.0,
           "shop": "Boozt.com",
           "product": "Ergobaby Omni Breeze"
@@ -394,6 +412,12 @@
           "price": 299.0,
           "shop": "barnashus.no",
           "product": "Stokke Sleepi Mini V3 laken, flowerecru"
+        },
+        {
+          "date": "2026-10-30 17:04",
+          "price": 299.0,
+          "shop": "barnashus.no",
+          "product": "Stokke Sleepi Mini V3 laken, flowerecru"
         }
       ]
     },
@@ -463,6 +487,12 @@
           "price": 329.0,
           "shop": "Mimmis",
           "product": "Ergobaby Swaddler Sheep"
+        },
+        {
+          "date": "2026-10-30 17:04",
+          "price": 329.0,
+          "shop": "Mimmis",
+          "product": "Ergobaby Swaddler Sheep"
         }
       ]
     },
@@ -513,6 +543,12 @@
           "price": 699.0,
           "shop": "easygrowofnorway.com",
           "product": "Easygrow Swaddle Baby Bag 0–6 Months – Safe & Soothing Sleep"
+        },
+        {
+          "date": "2026-10-30 17:04",
+          "price": 699.0,
+          "shop": "easygrowofnorway.com",
+          "product": "Easygrow Swaddle Baby Bag 0–6 Months – Safe & Soothing Sleep"
         }
       ]
     },
@@ -554,6 +590,12 @@
         },
         {
           "date": "2026-10-30 16:42",
+          "price": 5149.0,
+          "shop": "Philips",
+          "product": "Philips Premium Connected Baby Monitor SCD973/26"
+        },
+        {
+          "date": "2026-10-30 17:04",
           "price": 5149.0,
           "shop": "Philips",
           "product": "Philips Premium Connected Baby Monitor SCD973/26"
@@ -601,6 +643,12 @@
           "price": 1463.0,
           "shop": "CS MEGASTORE",
           "product": "Philips Avent Baby Monitor SCD643/26"
+        },
+        {
+          "date": "2026-10-30 17:04",
+          "price": 1463.0,
+          "shop": "CS MEGASTORE",
+          "product": "Philips Avent Baby Monitor SCD643/26"
         }
       ]
     },
@@ -639,6 +687,12 @@
           "price": 1199.0,
           "shop": "",
           "product": "Leander Matty Stellematte 50x70"
+        },
+        {
+          "date": "2026-10-30 17:04",
+          "price": 1199.0,
+          "shop": "",
+          "product": "Leander Matty Stellematte 50x70"
         }
       ]
     },
@@ -668,6 +722,12 @@
         },
         {
           "date": "2026-10-30 16:42",
+          "price": 199.0,
+          "shop": "Mimmis",
+          "product": "Leander Topper"
+        },
+        {
+          "date": "2026-10-30 17:04",
           "price": 199.0,
           "shop": "Mimmis",
           "product": "Leander Topper"
@@ -749,6 +809,12 @@
           "price": 449.0,
           "shop": "",
           "product": "Stokke Flexi Bath"
+        },
+        {
+          "date": "2026-10-30 17:04",
+          "price": 449.0,
+          "shop": "",
+          "product": "Stokke Flexi Bath"
         }
       ]
     },
@@ -772,6 +838,12 @@
         },
         {
           "date": "2026-10-30 16:42",
+          "price": 100.0,
+          "shop": "",
+          "product": "Stokke Flexi Bath Newborn Support"
+        },
+        {
+          "date": "2026-10-30 17:04",
           "price": 100.0,
           "shop": "",
           "product": "Stokke Flexi Bath Newborn Support"
@@ -821,6 +893,12 @@
           "price": 299.0,
           "shop": "barnashus.no",
           "product": "Trimmy elektrisk negleklipper, sagegreen"
+        },
+        {
+          "date": "2026-10-30 17:04",
+          "price": 299.0,
+          "shop": "barnashus.no",
+          "product": "Trimmy elektrisk negleklipper, sagegreen"
         }
       ]
     },
@@ -852,16 +930,43 @@
     },
     {
       "category": "Feeding",
-      "item": "Breast pump",
-      "search": "brystpumpe",
+      "item": "Breast pump - manual",
+      "search": "philips avent manuell brystpumpe",
       "priority": "Nice",
       "blackWeek": true,
       "qty": 1,
-      "url": "",
+      "url": "https://www.jollyroom.no/mamma/ammeprodukter/brystpumper-tilbehor/philips-avent-scf430-01-brystpumpe-manuell",
       "target": null,
       "bought": false,
-      "notes": "Electric pumps are often on sale in Black Week",
-      "history": []
+      "notes": "Philips Avent SCF430/01 manual pump",
+      "history": [
+        {
+          "date": "2026-10-30 17:04",
+          "price": 329.0,
+          "shop": "jollyroom.no",
+          "product": "Philips Avent SCF430/01 Brystpumpe Manuell"
+        }
+      ]
+    },
+    {
+      "category": "Feeding",
+      "item": "Breast pump - hands-free electric",
+      "search": "philips avent hands-free brystpumpe",
+      "priority": "Nice",
+      "blackWeek": true,
+      "qty": 1,
+      "url": "https://www.philips.no/c-p/SCF543_11/hands-free-single-electric-breast-pump",
+      "target": null,
+      "bought": false,
+      "notes": "Philips Avent SCF543/11 hands-free single electric pump. Electric pumps are often on sale in Black Week",
+      "history": [
+        {
+          "date": "2026-10-30 17:04",
+          "price": 1462.0,
+          "shop": "philips.no",
+          "product": "Avent Hands-free Enkel elektrisk brystpumpe"
+        }
+      ]
     },
     {
       "category": "Feeding",
