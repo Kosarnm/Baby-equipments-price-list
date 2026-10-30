@@ -1,7 +1,7 @@
 {
-  "updated": "2026-10-30 14:35",
-  "checked": 3,
-  "ok": 3,
+  "updated": "2026-10-30 14:44",
+  "checked": 4,
+  "ok": 4,
   "items": [
     {
       "category": "Transport",
@@ -35,6 +35,12 @@
         },
         {
           "date": "2026-10-30 14:35",
+          "price": 13949.0,
+          "shop": "Kjøpbarnevogn",
+          "product": "Bugaboo Fox 5 Renew"
+        },
+        {
+          "date": "2026-10-30 14:44",
           "price": 13949.0,
           "shop": "Kjøpbarnevogn",
           "product": "Bugaboo Fox 5 Renew"
@@ -84,6 +90,12 @@
           "price": 1999.0,
           "shop": "OhDearBaby",
           "product": "Easygrow Fnugg Vognpose"
+        },
+        {
+          "date": "2026-10-30 14:44",
+          "price": 1999.0,
+          "shop": "OhDearBaby",
+          "product": "Easygrow Fnugg Vognpose"
         }
       ]
     },
@@ -107,6 +119,12 @@
         },
         {
           "date": "2026-10-30 14:35",
+          "price": 1866.0,
+          "shop": "Boozt.com",
+          "product": "Ergobaby Omni Breeze"
+        },
+        {
+          "date": "2026-10-30 14:44",
           "price": 1866.0,
           "shop": "Boozt.com",
           "product": "Ergobaby Omni Breeze"
@@ -193,11 +211,31 @@
     },
     {
       "category": "Sleep",
-      "item": "Fitted sheets (cot and pram)",
-      "search": "laken babyseng",
+      "item": "Fitted sheets for Stokke Sleepi Mini",
+      "search": "stokke sleepi mini laken",
       "priority": "Must",
       "blackWeek": false,
-      "qty": 4,
+      "qty": 2,
+      "url": "https://www.barnashus.no/stokke/stokke-sleepi-mini-v3-laken-flowerecru-11031097",
+      "target": null,
+      "bought": false,
+      "notes": "Oval - needs sheets made for the Sleepi Mini",
+      "history": [
+        {
+          "date": "2026-10-30 14:44",
+          "price": 299.0,
+          "shop": "barnashus.no",
+          "product": "Stokke Sleepi Mini V3 laken, flowerecru"
+        }
+      ]
+    },
+    {
+      "category": "Sleep",
+      "item": "Fitted sheets for pram bassinet",
+      "search": "laken bugaboo fox",
+      "priority": "Must",
+      "blackWeek": false,
+      "qty": 2,
       "url": "",
       "target": null,
       "bought": false,
