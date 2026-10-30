@@ -1,7 +1,7 @@
 {
-  "updated": "2026-10-30 15:50",
-  "checked": 8,
-  "ok": 8,
+  "updated": "2026-10-30 15:57",
+  "checked": 9,
+  "ok": 9,
   "items": [
     {
       "category": "Transport",
@@ -59,6 +59,12 @@
         },
         {
           "date": "2026-10-30 15:50",
+          "price": 13949.0,
+          "shop": "Kjøpbarnevogn",
+          "product": "Bugaboo Fox 5 Renew"
+        },
+        {
+          "date": "2026-10-30 15:57",
           "price": 13949.0,
           "shop": "Kjøpbarnevogn",
           "product": "Bugaboo Fox 5 Renew"
@@ -132,6 +138,12 @@
           "price": 1999.0,
           "shop": "OhDearBaby",
           "product": "Easygrow Fnugg Vognpose"
+        },
+        {
+          "date": "2026-10-30 15:57",
+          "price": 1999.0,
+          "shop": "OhDearBaby",
+          "product": "Easygrow Fnugg Vognpose"
         }
       ]
     },
@@ -179,6 +191,12 @@
         },
         {
           "date": "2026-10-30 15:50",
+          "price": 1866.0,
+          "shop": "Boozt.com",
+          "product": "Ergobaby Omni Breeze"
+        },
+        {
+          "date": "2026-10-30 15:57",
           "price": 1866.0,
           "shop": "Boozt.com",
           "product": "Ergobaby Omni Breeze"
@@ -298,6 +316,12 @@
           "price": 299.0,
           "shop": "barnashus.no",
           "product": "Stokke Sleepi Mini V3 laken, flowerecru"
+        },
+        {
+          "date": "2026-10-30 15:57",
+          "price": 299.0,
+          "shop": "barnashus.no",
+          "product": "Stokke Sleepi Mini V3 laken, flowerecru"
         }
       ]
     },
@@ -343,6 +367,12 @@
           "price": 329.0,
           "shop": "Mimmis",
           "product": "Ergobaby Swaddler Sheep"
+        },
+        {
+          "date": "2026-10-30 15:57",
+          "price": 329.0,
+          "shop": "Mimmis",
+          "product": "Ergobaby Swaddler Sheep"
         }
       ]
     },
@@ -369,6 +399,12 @@
           "price": 699.0,
           "shop": "easygrowofnorway.com",
           "product": "Easygrow Swaddle Baby Bag 0–6 Months – Safe & Soothing Sleep"
+        },
+        {
+          "date": "2026-10-30 15:57",
+          "price": 699.0,
+          "shop": "easygrowofnorway.com",
+          "product": "Easygrow Swaddle Baby Bag 0–6 Months – Safe & Soothing Sleep"
         }
       ]
     },
@@ -386,6 +422,12 @@
       "history": [
         {
           "date": "2026-10-30 15:50",
+          "price": 5149.0,
+          "shop": "Philips",
+          "product": "Philips Premium Connected Baby Monitor SCD973/26"
+        },
+        {
+          "date": "2026-10-30 15:57",
           "price": 5149.0,
           "shop": "Philips",
           "product": "Philips Premium Connected Baby Monitor SCD973/26"
@@ -409,21 +451,34 @@
           "price": 1463.0,
           "shop": "CS MEGASTORE",
           "product": "Philips Avent Baby Monitor SCD643/26"
+        },
+        {
+          "date": "2026-10-30 15:57",
+          "price": 1463.0,
+          "shop": "CS MEGASTORE",
+          "product": "Philips Avent Baby Monitor SCD643/26"
         }
       ]
     },
     {
       "category": "Changing",
       "item": "Changing table or changing mat",
-      "search": "stellebord",
+      "search": "stellematte",
       "priority": "Must",
       "blackWeek": true,
       "qty": 1,
-      "url": "",
+      "url": "https://www.prisjakt.no/product.php?p=13594670",
       "target": null,
       "bought": false,
-      "notes": "",
-      "history": []
+      "notes": "Leander Matty 50x70 - check it fits the top of your dresser",
+      "history": [
+        {
+          "date": "2026-10-30 15:57",
+          "price": 1199.0,
+          "shop": "",
+          "product": "Leander Matty Stellematte 50x70"
+        }
+      ]
     },
     {
       "category": "Changing",
