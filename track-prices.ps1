@@ -33,11 +33,44 @@ function Format-Kr($value) {
 
 function HtmlEnc($s) { return [Net.WebUtility]::HtmlEncode([string]$s) }
 
-function Get-PrisjaktPrice([string]$url) {
-    $resp  = Invoke-WebRequest -UseBasicParsing -Uri $url -Headers $headers -TimeoutSec 30
+function Get-Html([string]$url) {
+    $resp = Invoke-WebRequest -UseBasicParsing -Uri $url -Headers $headers -TimeoutSec 30
     # Decode as UTF-8 ourselves so Norwegian letters survive.
     $resp.RawContentStream.Position = 0
-    $html = (New-Object IO.StreamReader($resp.RawContentStream, [Text.Encoding]::UTF8)).ReadToEnd()
+    return (New-Object IO.StreamReader($resp.RawContentStream, [Text.Encoding]::UTF8)).ReadToEnd()
+}
+
+# Any other shop: read the standard schema.org Product data, or the product:price meta tag.
+function Get-ShopPrice([string]$url) {
+    $html = Get-Html $url
+    $name = $null; $price = $null
+    foreach ($m in [regex]::Matches($html, '<script[^>]*application/ld\+json[^>]*>(.*?)</script>', 'Singleline')) {
+        try { $ld = $m.Groups[1].Value | ConvertFrom-Json } catch { continue }
+        $nodes = @($ld) + @($ld | ForEach-Object { $_.'@graph' } | Where-Object { $_ })
+        foreach ($n in $nodes) {
+            if (-not $n.offers) { continue }
+            foreach ($o in @($n.offers)) {
+                $p = if ($o.lowPrice) { $o.lowPrice } elseif ($o.price) { $o.price } else { $null }
+                if ($p -and "$p" -match '^\d') {
+                    $p = [double]::Parse(("$p" -replace ',', '.'), [Globalization.CultureInfo]::InvariantCulture)
+                    if ($null -eq $price -or $p -lt $price) { $price = $p; $name = $n.name }
+                }
+            }
+        }
+    }
+    if ($null -eq $price) {
+        $m = [regex]::Match($html, '<meta[^>]+(?:product|og):price:amount"\s+content="([\d.,]+)"')
+        if (-not $m.Success) { $m = [regex]::Match($html, 'itemprop="price"[^>]*content="([\d.,]+)"') }
+        if ($m.Success) { $price = [double]::Parse(($m.Groups[1].Value -replace ',', '.'), [Globalization.CultureInfo]::InvariantCulture) }
+    }
+    if (-not $name) { $name = [Net.WebUtility]::HtmlDecode(([regex]::Match($html, '<meta property="og:title" content="([^"]+)"')).Groups[1].Value) }
+    if (-not $name) { $name = [Net.WebUtility]::HtmlDecode(([regex]::Match($html, '<title>\s*([^<|]+)', 'Singleline')).Groups[1].Value.Trim()) }
+    if ($null -eq $price) { throw 'no price found on page' }
+    return [pscustomobject]@{ Name = $name; Price = $price; Shop = ([Uri]$url).Host -replace '^www\.', ''; Offers = 1 }
+}
+
+function Get-PrisjaktPrice([string]$url) {
+    $html = Get-Html $url
 
     $name = ([regex]::Match($html, '<meta property="og:title" content="([^"]+)"')).Groups[1].Value
     $name = [Net.WebUtility]::HtmlDecode(($name -replace '\s*-\s*Sammenlign priser hos Prisjakt$', ''))
@@ -100,12 +133,14 @@ $delim = if ((Get-Content -Path $ListFile -TotalCount 1 -Encoding UTF8) -match '
 $list = @(Import-Csv -Path $ListFile -Delimiter $delim -Encoding UTF8)
 $now  = Get-Date -Format 'yyyy-MM-dd HH:mm'
 $new  = @()
-$tracked = @($list | Where-Object { $_.PrisjaktUrl -match '^https?://(www\.)?prisjakt\.no/' })
+# The PrisjaktUrl column also accepts a link straight to a shop's product page.
+$tracked = @($list | Where-Object { $_.PrisjaktUrl -match '^\s*https?://' })
 
-Write-Host "Checking $($tracked.Count) product(s) on Prisjakt..."
+Write-Host "Checking $($tracked.Count) product(s)..."
 foreach ($row in $tracked) {
     try {
-        $r = Get-PrisjaktPrice $row.PrisjaktUrl.Trim()
+        $url = $row.PrisjaktUrl.Trim()
+        $r = if ($url -match '^https?://(www\.)?prisjakt\.no/') { Get-PrisjaktPrice $url } else { Get-ShopPrice $url }
         Write-Host ("  {0,-40} {1,12}  {2}" -f $row.Item, (Format-Kr $r.Price), $r.Shop)
         $new += [pscustomobject]@{
             Date = $now; Item = $row.Item; Url = $row.PrisjaktUrl.Trim(); Product = $r.Name
@@ -194,7 +229,7 @@ foreach ($cat in ($list | Group-Object Category)) {
 
         $itemCell = HtmlEnc $row.Item
         if ($url) {
-            $label = if ($prod) { $prod } else { 'Prisjakt' }
+            $label = if ($prod) { $prod } else { 'Product page' }
             $itemCell += "<div class='sub'><a href='$(HtmlEnc $url)' target='_blank'>$(HtmlEnc $label)</a></div>"
         } else {
             $q = [Uri]::EscapeDataString($(if ($row.PrisjaktSearch) { $row.PrisjaktSearch } else { $row.Item -replace '\s*\(.*\)', '' }))

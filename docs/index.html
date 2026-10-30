@@ -147,7 +147,7 @@ function card(it, i) {
       </div>
       ${it.shop ? `<div class="sub">Cheapest today: ${esc(it.shop)}</div>` : ''}` : ''}
       ${it.notes ? `<div class="note">${esc(it.notes)}</div>` : ''}
-      ${it.url ? `<a class="btn" href="${esc(it.url)}" target="_blank" rel="noopener">Open on Prisjakt</a>`
+      ${it.url ? `<a class="btn" href="${esc(it.url)}" target="_blank" rel="noopener">${/prisjakt\.no/.test(it.url) ? 'Open on Prisjakt' : 'Open in shop'}</a>`
                : `<a class="btn" href="${search}" target="_blank" rel="noopener">Find on Prisjakt</a>
                   <a class="btn ghost" href="${editUrl}" target="_blank" rel="noopener">Paste the link into the list</a>`}
     </div>
