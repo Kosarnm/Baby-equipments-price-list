@@ -1,7 +1,7 @@
 {
-  "updated": "2026-10-30 14:17",
-  "checked": 1,
-  "ok": 1,
+  "updated": "2026-10-30 14:23",
+  "checked": 2,
+  "ok": 2,
   "items": [
     {
       "category": "Transport",
@@ -23,6 +23,12 @@
         },
         {
           "date": "2026-10-30 14:17",
+          "price": 13949.0,
+          "shop": "Kjøpbarnevogn",
+          "product": "Bugaboo Fox 5 Renew"
+        },
+        {
+          "date": "2026-10-30 14:23",
           "price": 13949.0,
           "shop": "Kjøpbarnevogn",
           "product": "Bugaboo Fox 5 Renew"
@@ -75,11 +81,18 @@
       "priority": "Nice",
       "blackWeek": true,
       "qty": 1,
-      "url": "",
+      "url": "https://www.prisjakt.no/product.php?p=5916042",
       "target": null,
       "bought": false,
       "notes": "",
-      "history": []
+      "history": [
+        {
+          "date": "2026-10-30 14:23",
+          "price": 1866.0,
+          "shop": "Boozt.com",
+          "product": "Ergobaby Omni Breeze"
+        }
+      ]
     },
     {
       "category": "Transport",
