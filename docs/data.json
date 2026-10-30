@@ -1,7 +1,7 @@
 {
-  "updated": "2026-10-30 14:44",
-  "checked": 4,
-  "ok": 4,
+  "updated": "2026-10-30 15:36",
+  "checked": 6,
+  "ok": 6,
   "items": [
     {
       "category": "Transport",
@@ -41,6 +41,18 @@
         },
         {
           "date": "2026-10-30 14:44",
+          "price": 13949.0,
+          "shop": "Kjøpbarnevogn",
+          "product": "Bugaboo Fox 5 Renew"
+        },
+        {
+          "date": "2026-10-30 15:33",
+          "price": 13949.0,
+          "shop": "Kjøpbarnevogn",
+          "product": "Bugaboo Fox 5 Renew"
+        },
+        {
+          "date": "2026-10-30 15:36",
           "price": 13949.0,
           "shop": "Kjøpbarnevogn",
           "product": "Bugaboo Fox 5 Renew"
@@ -96,6 +108,18 @@
           "price": 1999.0,
           "shop": "OhDearBaby",
           "product": "Easygrow Fnugg Vognpose"
+        },
+        {
+          "date": "2026-10-30 15:33",
+          "price": 1999.0,
+          "shop": "OhDearBaby",
+          "product": "Easygrow Fnugg Vognpose"
+        },
+        {
+          "date": "2026-10-30 15:36",
+          "price": 1999.0,
+          "shop": "OhDearBaby",
+          "product": "Easygrow Fnugg Vognpose"
         }
       ]
     },
@@ -125,6 +149,18 @@
         },
         {
           "date": "2026-10-30 14:44",
+          "price": 1866.0,
+          "shop": "Boozt.com",
+          "product": "Ergobaby Omni Breeze"
+        },
+        {
+          "date": "2026-10-30 15:33",
+          "price": 1866.0,
+          "shop": "Boozt.com",
+          "product": "Ergobaby Omni Breeze"
+        },
+        {
+          "date": "2026-10-30 15:36",
           "price": 1866.0,
           "shop": "Boozt.com",
           "product": "Ergobaby Omni Breeze"
@@ -226,6 +262,18 @@
           "price": 299.0,
           "shop": "barnashus.no",
           "product": "Stokke Sleepi Mini V3 laken, flowerecru"
+        },
+        {
+          "date": "2026-10-30 15:33",
+          "price": 299.0,
+          "shop": "barnashus.no",
+          "product": "Stokke Sleepi Mini V3 laken, flowerecru"
+        },
+        {
+          "date": "2026-10-30 15:36",
+          "price": 299.0,
+          "shop": "barnashus.no",
+          "product": "Stokke Sleepi Mini V3 laken, flowerecru"
         }
       ]
     },
@@ -244,16 +292,49 @@
     },
     {
       "category": "Sleep",
-      "item": "Baby sleeping bag / duvet",
+      "item": "Swaddle (newborn)",
+      "search": "swaddle baby",
+      "priority": "Nice",
+      "blackWeek": true,
+      "qty": 2,
+      "url": "https://www.prisjakt.no/product.php?p=7009162",
+      "target": null,
+      "bought": false,
+      "notes": "For the first months - stop once baby starts trying to roll",
+      "history": [
+        {
+          "date": "2026-10-30 15:33",
+          "price": 329.0,
+          "shop": "Mimmis",
+          "product": "Ergobaby Swaddler Sheep"
+        },
+        {
+          "date": "2026-10-30 15:36",
+          "price": 329.0,
+          "shop": "Mimmis",
+          "product": "Ergobaby Swaddler Sheep"
+        }
+      ]
+    },
+    {
+      "category": "Sleep",
+      "item": "Baby sleeping bag",
       "search": "sovepose baby",
       "priority": "Must",
       "blackWeek": true,
       "qty": 2,
-      "url": "",
+      "url": "https://www.easygrowofnorway.com/gb/hjem/420-1347-swaddle-svopepose.html#/250-colour-hazel",
       "target": null,
       "bought": false,
-      "notes": "",
-      "history": []
+      "notes": "Easygrow Swaddle Baby Bag 0-6 months, colour Hazel",
+      "history": [
+        {
+          "date": "2026-10-30 15:36",
+          "price": 699.0,
+          "shop": "easygrowofnorway.com",
+          "product": "Easygrow Swaddle Baby Bag 0–6 Months – Safe & Soothing Sleep"
+        }
+      ]
     },
     {
       "category": "Sleep",
