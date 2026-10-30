@@ -1,7 +1,7 @@
 {
-  "updated": "2026-10-30 14:23",
-  "checked": 2,
-  "ok": 2,
+  "updated": "2026-10-30 14:35",
+  "checked": 3,
+  "ok": 3,
   "items": [
     {
       "category": "Transport",
@@ -29,6 +29,12 @@
         },
         {
           "date": "2026-10-30 14:23",
+          "price": 13949.0,
+          "shop": "Kjøpbarnevogn",
+          "product": "Bugaboo Fox 5 Renew"
+        },
+        {
+          "date": "2026-10-30 14:35",
           "price": 13949.0,
           "shop": "Kjøpbarnevogn",
           "product": "Bugaboo Fox 5 Renew"
@@ -68,11 +74,18 @@
       "priority": "Must",
       "blackWeek": true,
       "qty": 1,
-      "url": "",
+      "url": "https://www.prisjakt.no/product.php?p=15442054",
       "target": null,
       "bought": false,
       "notes": "Wool or down for Norwegian winter",
-      "history": []
+      "history": [
+        {
+          "date": "2026-10-30 14:35",
+          "price": 1999.0,
+          "shop": "OhDearBaby",
+          "product": "Easygrow Fnugg Vognpose"
+        }
+      ]
     },
     {
       "category": "Transport",
@@ -88,6 +101,12 @@
       "history": [
         {
           "date": "2026-10-30 14:23",
+          "price": 1866.0,
+          "shop": "Boozt.com",
+          "product": "Ergobaby Omni Breeze"
+        },
+        {
+          "date": "2026-10-30 14:35",
           "price": 1866.0,
           "shop": "Boozt.com",
           "product": "Ergobaby Omni Breeze"
