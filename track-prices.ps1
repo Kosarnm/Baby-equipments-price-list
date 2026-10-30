@@ -66,13 +66,29 @@ function Get-PrisjaktPrice([string]$url) {
         }
     }
 
-    # Cheapest shop: each offer row has screen-reader text like "Shop, product title, 7 688 kr".
-    $shop = ''
-    foreach ($m in [regex]::Matches($html, '<span class="sr-only">([^<]+?), (\d[\d\s  ]*)[\s  ]kr</span>')) {
-        $p = [double](($m.Groups[2].Value) -replace '[\s  ]', '')
-        if ($null -eq $low) { $low = $p }
-        if ($p -eq $low) { $shop = [Net.WebUtility]::HtmlDecode(($m.Groups[1].Value -split ',')[0].Trim()); break }
+    # Each offer row has screen-reader text like "Shop, product title, 7 688 kr".
+    $shopOffers = foreach ($m in [regex]::Matches($html, '<span class="sr-only">([^<]+?), (\d[\d\s  ]*)[\s  ]kr</span>')) {
+        [pscustomobject]@{
+            Shop  = [Net.WebUtility]::HtmlDecode(($m.Groups[1].Value -split ',')[0].Trim())
+            Price = [double](($m.Groups[2].Value) -replace '[\s  ]', '')
+        }
     }
+
+    # The structured data only has per-colour prices, so it misses offers listed as "any colour".
+    # Unless a specific variant was asked for, use the page's own "cheapest right now" price.
+    if (-not $variant) {
+        $m = [regex]::Match($html, 'Den billigste prisen for .{1,300}? akkurat nå er (\d[\d\s  ]*)[\s  ]kr')
+        if ($m.Success) {
+            $low = [double]($m.Groups[1].Value -replace '[\s  ]', '')
+        } elseif ($shopOffers) {
+            $low = ($shopOffers | Measure-Object Price -Minimum).Minimum
+        }
+    }
+    if ($null -eq $low -and $shopOffers) { $low = ($shopOffers | Measure-Object Price -Minimum).Minimum }
+
+    $shop = ''
+    $cheapest = $shopOffers | Where-Object { $_.Price -eq $low } | Select-Object -First 1
+    if ($cheapest) { $shop = $cheapest.Shop }
 
     if ($null -eq $low) { throw 'no price found on page' }
     return [pscustomobject]@{ Name = $name; Price = $low; Shop = $shop; Offers = $offers }

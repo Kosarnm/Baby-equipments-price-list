@@ -4,7 +4,7 @@ on:
   schedule:
     - cron: '0 6 * * *'      # every day, 07:00 Norwegian time (06:00 UTC)
   push:
-    paths: ['baby-list.csv']  # re-check right after the list is edited
+    paths: ['baby-list.csv', 'track-prices.ps1']  # re-check right after the list or tracker changes
   workflow_dispatch:          # "Run workflow" button on the Actions tab
 
 permissions:
