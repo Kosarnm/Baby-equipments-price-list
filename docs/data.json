@@ -1,7 +1,7 @@
 {
-  "updated": "2026-10-30 15:36",
-  "checked": 6,
-  "ok": 6,
+  "updated": "2026-10-30 15:50",
+  "checked": 8,
+  "ok": 8,
   "items": [
     {
       "category": "Transport",
@@ -53,6 +53,12 @@
         },
         {
           "date": "2026-10-30 15:36",
+          "price": 13949.0,
+          "shop": "Kjøpbarnevogn",
+          "product": "Bugaboo Fox 5 Renew"
+        },
+        {
+          "date": "2026-10-30 15:50",
           "price": 13949.0,
           "shop": "Kjøpbarnevogn",
           "product": "Bugaboo Fox 5 Renew"
@@ -120,6 +126,12 @@
           "price": 1999.0,
           "shop": "OhDearBaby",
           "product": "Easygrow Fnugg Vognpose"
+        },
+        {
+          "date": "2026-10-30 15:50",
+          "price": 1999.0,
+          "shop": "OhDearBaby",
+          "product": "Easygrow Fnugg Vognpose"
         }
       ]
     },
@@ -161,6 +173,12 @@
         },
         {
           "date": "2026-10-30 15:36",
+          "price": 1866.0,
+          "shop": "Boozt.com",
+          "product": "Ergobaby Omni Breeze"
+        },
+        {
+          "date": "2026-10-30 15:50",
           "price": 1866.0,
           "shop": "Boozt.com",
           "product": "Ergobaby Omni Breeze"
@@ -274,6 +292,12 @@
           "price": 299.0,
           "shop": "barnashus.no",
           "product": "Stokke Sleepi Mini V3 laken, flowerecru"
+        },
+        {
+          "date": "2026-10-30 15:50",
+          "price": 299.0,
+          "shop": "barnashus.no",
+          "product": "Stokke Sleepi Mini V3 laken, flowerecru"
         }
       ]
     },
@@ -313,6 +337,12 @@
           "price": 329.0,
           "shop": "Mimmis",
           "product": "Ergobaby Swaddler Sheep"
+        },
+        {
+          "date": "2026-10-30 15:50",
+          "price": 329.0,
+          "shop": "Mimmis",
+          "product": "Ergobaby Swaddler Sheep"
         }
       ]
     },
@@ -333,21 +363,54 @@
           "price": 699.0,
           "shop": "easygrowofnorway.com",
           "product": "Easygrow Swaddle Baby Bag 0–6 Months – Safe & Soothing Sleep"
+        },
+        {
+          "date": "2026-10-30 15:50",
+          "price": 699.0,
+          "shop": "easygrowofnorway.com",
+          "product": "Easygrow Swaddle Baby Bag 0–6 Months – Safe & Soothing Sleep"
         }
       ]
     },
     {
       "category": "Sleep",
-      "item": "Baby monitor (audio/video)",
+      "item": "Baby monitor - option A (Philips Premium SCD973)",
       "search": "babycall",
       "priority": "Nice",
       "blackWeek": true,
       "qty": 1,
-      "url": "",
+      "url": "https://www.prisjakt.no/product.php?p=13960187",
       "target": null,
       "bought": false,
-      "notes": "",
-      "history": []
+      "notes": "Breathing rate + sleep tracking (SenseIQ) and separate parent screen. Buy A or B, not both.",
+      "history": [
+        {
+          "date": "2026-10-30 15:50",
+          "price": 5149.0,
+          "shop": "Philips",
+          "product": "Philips Premium Connected Baby Monitor SCD973/26"
+        }
+      ]
+    },
+    {
+      "category": "Sleep",
+      "item": "Baby monitor - option B (Philips Avent SCD643)",
+      "search": "babycall",
+      "priority": "Nice",
+      "blackWeek": true,
+      "qty": 1,
+      "url": "https://www.prisjakt.no/product.php?p=13470792",
+      "target": null,
+      "bought": false,
+      "notes": "Phone is the screen, soothing sounds, no breathing tracking. Buy A or B, not both.",
+      "history": [
+        {
+          "date": "2026-10-30 15:50",
+          "price": 1463.0,
+          "shop": "CS MEGASTORE",
+          "product": "Philips Avent Baby Monitor SCD643/26"
+        }
+      ]
     },
     {
       "category": "Changing",
