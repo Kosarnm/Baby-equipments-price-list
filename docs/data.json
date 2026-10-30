@@ -1,539 +1,463 @@
 {
-    "updated":  "2026-10-30 13:09",
-    "checked":  0,
-    "ok":  0,
-    "items":  [
-                  {
-                      "category":  "Transport",
-                      "item":  "Barnevogn (kombivogn med bag + sete)",
-                      "priority":  "Must",
-                      "blackWeek":  true,
-                      "qty":  1,
-                      "url":  "",
-                      "target":  null,
-                      "bought":  false,
-                      "notes":  "Biggest purchase - Black Week is worth it here. Check that the bag is approved for sleeping outdoors.",
-                      "history":  [
-
-                                  ]
-                  },
-                  {
-                      "category":  "Transport",
-                      "item":  "Bilstol / babybag (i-Size 0-13 kg)",
-                      "priority":  "Must",
-                      "blackWeek":  true,
-                      "qty":  1,
-                      "url":  "",
-                      "target":  null,
-                      "bought":  false,
-                      "notes":  "Needed for the ride home from the hospital. Rear-facing. Many people rent one instead.",
-                      "history":  [
-
-                                  ]
-                  },
-                  {
-                      "category":  "Transport",
-                      "item":  "Isofix-base for bilstol",
-                      "priority":  "Nice",
-                      "blackWeek":  true,
-                      "qty":  1,
-                      "url":  "",
-                      "target":  null,
-                      "bought":  false,
-                      "notes":  "Check that it fits both the car seat and your car",
-                      "history":  [
-
-                                  ]
-                  },
-                  {
-                      "category":  "Transport",
-                      "item":  "Vognpose / kjørepose (vinter)",
-                      "priority":  "Must",
-                      "blackWeek":  true,
-                      "qty":  1,
-                      "url":  "",
-                      "target":  null,
-                      "bought":  false,
-                      "notes":  "Wool or down for Norwegian winter",
-                      "history":  [
-
-                                  ]
-                  },
-                  {
-                      "category":  "Transport",
-                      "item":  "Bæresele eller vikle",
-                      "priority":  "Nice",
-                      "blackWeek":  true,
-                      "qty":  1,
-                      "url":  "",
-                      "target":  null,
-                      "bought":  false,
-                      "notes":  "",
-                      "history":  [
-
-                                  ]
-                  },
-                  {
-                      "category":  "Transport",
-                      "item":  "Stellebag / skifteveske",
-                      "priority":  "Nice",
-                      "blackWeek":  true,
-                      "qty":  1,
-                      "url":  "",
-                      "target":  null,
-                      "bought":  false,
-                      "notes":  "Often comes with the pram",
-                      "history":  [
-
-                                  ]
-                  },
-                  {
-                      "category":  "Sleep",
-                      "item":  "Babyseng / sprinkelseng",
-                      "priority":  "Must",
-                      "blackWeek":  true,
-                      "qty":  1,
-                      "url":  "",
-                      "target":  null,
-                      "bought":  false,
-                      "notes":  "",
-                      "history":  [
-
-                                  ]
-                  },
-                  {
-                      "category":  "Sleep",
-                      "item":  "Madrass til seng",
-                      "priority":  "Must",
-                      "blackWeek":  true,
-                      "qty":  1,
-                      "url":  "",
-                      "target":  null,
-                      "bought":  false,
-                      "notes":  "Firm and the right size for the bed",
-                      "history":  [
-
-                                  ]
-                  },
-                  {
-                      "category":  "Sleep",
-                      "item":  "Bedside crib / vugge",
-                      "priority":  "Nice",
-                      "blackWeek":  true,
-                      "qty":  1,
-                      "url":  "",
-                      "target":  null,
-                      "bought":  false,
-                      "notes":  "",
-                      "history":  [
-
-                                  ]
-                  },
-                  {
-                      "category":  "Sleep",
-                      "item":  "Laken (til seng og vogn)",
-                      "priority":  "Must",
-                      "blackWeek":  false,
-                      "qty":  4,
-                      "url":  "",
-                      "target":  null,
-                      "bought":  false,
-                      "notes":  "",
-                      "history":  [
-
-                                  ]
-                  },
-                  {
-                      "category":  "Sleep",
-                      "item":  "Sovepose / babydyne",
-                      "priority":  "Must",
-                      "blackWeek":  true,
-                      "qty":  2,
-                      "url":  "",
-                      "target":  null,
-                      "bought":  false,
-                      "notes":  "",
-                      "history":  [
-
-                                  ]
-                  },
-                  {
-                      "category":  "Sleep",
-                      "item":  "Babycall (lyd/video)",
-                      "priority":  "Nice",
-                      "blackWeek":  true,
-                      "qty":  1,
-                      "url":  "",
-                      "target":  null,
-                      "bought":  false,
-                      "notes":  "",
-                      "history":  [
-
-                                  ]
-                  },
-                  {
-                      "category":  "Changing",
-                      "item":  "Stellebord eller stellematte",
-                      "priority":  "Must",
-                      "blackWeek":  true,
-                      "qty":  1,
-                      "url":  "",
-                      "target":  null,
-                      "bought":  false,
-                      "notes":  "",
-                      "history":  [
-
-                                  ]
-                  },
-                  {
-                      "category":  "Changing",
-                      "item":  "Bleier nyfødt (str 1)",
-                      "priority":  "Must",
-                      "blackWeek":  false,
-                      "qty":  2,
-                      "url":  "",
-                      "target":  null,
-                      "bought":  false,
-                      "notes":  "Don\u0027t overbuy size 1 - babies grow out of it fast",
-                      "history":  [
-
-                                  ]
-                  },
-                  {
-                      "category":  "Changing",
-                      "item":  "Våtservietter / vaskekluter",
-                      "priority":  "Must",
-                      "blackWeek":  false,
-                      "qty":  1,
-                      "url":  "",
-                      "target":  null,
-                      "bought":  false,
-                      "notes":  "",
-                      "history":  [
-
-                                  ]
-                  },
-                  {
-                      "category":  "Changing",
-                      "item":  "Bleiebøtte",
-                      "priority":  "Nice",
-                      "blackWeek":  true,
-                      "qty":  1,
-                      "url":  "",
-                      "target":  null,
-                      "bought":  false,
-                      "notes":  "",
-                      "history":  [
-
-                                  ]
-                  },
-                  {
-                      "category":  "Changing",
-                      "item":  "Sinkkrem / bleiesalve",
-                      "priority":  "Must",
-                      "blackWeek":  false,
-                      "qty":  1,
-                      "url":  "",
-                      "target":  null,
-                      "bought":  false,
-                      "notes":  "",
-                      "history":  [
-
-                                  ]
-                  },
-                  {
-                      "category":  "Bath \u0026 care",
-                      "item":  "Babybadekar / badestol",
-                      "priority":  "Must",
-                      "blackWeek":  true,
-                      "qty":  1,
-                      "url":  "",
-                      "target":  null,
-                      "bought":  false,
-                      "notes":  "",
-                      "history":  [
-
-                                  ]
-                  },
-                  {
-                      "category":  "Bath \u0026 care",
-                      "item":  "Badehåndklær med hette",
-                      "priority":  "Must",
-                      "blackWeek":  false,
-                      "qty":  2,
-                      "url":  "",
-                      "target":  null,
-                      "bought":  false,
-                      "notes":  "",
-                      "history":  [
-
-                                  ]
-                  },
-                  {
-                      "category":  "Bath \u0026 care",
-                      "item":  "Digitalt termometer",
-                      "priority":  "Must",
-                      "blackWeek":  true,
-                      "qty":  1,
-                      "url":  "",
-                      "target":  null,
-                      "bought":  false,
-                      "notes":  "",
-                      "history":  [
-
-                                  ]
-                  },
-                  {
-                      "category":  "Bath \u0026 care",
-                      "item":  "Neglesaks / neglefil for baby",
-                      "priority":  "Must",
-                      "blackWeek":  false,
-                      "qty":  1,
-                      "url":  "",
-                      "target":  null,
-                      "bought":  false,
-                      "notes":  "",
-                      "history":  [
-
-                                  ]
-                  },
-                  {
-                      "category":  "Bath \u0026 care",
-                      "item":  "Nesesuger",
-                      "priority":  "Nice",
-                      "blackWeek":  true,
-                      "qty":  1,
-                      "url":  "",
-                      "target":  null,
-                      "bought":  false,
-                      "notes":  "",
-                      "history":  [
-
-                                  ]
-                  },
-                  {
-                      "category":  "Feeding",
-                      "item":  "Ammepute",
-                      "priority":  "Nice",
-                      "blackWeek":  true,
-                      "qty":  1,
-                      "url":  "",
-                      "target":  null,
-                      "bought":  false,
-                      "notes":  "",
-                      "history":  [
-
-                                  ]
-                  },
-                  {
-                      "category":  "Feeding",
-                      "item":  "Brystpumpe",
-                      "priority":  "Nice",
-                      "blackWeek":  true,
-                      "qty":  1,
-                      "url":  "",
-                      "target":  null,
-                      "bought":  false,
-                      "notes":  "Electric pumps are often on sale in Black Week",
-                      "history":  [
-
-                                  ]
-                  },
-                  {
-                      "category":  "Feeding",
-                      "item":  "Tåteflasker",
-                      "priority":  "Must",
-                      "blackWeek":  false,
-                      "qty":  4,
-                      "url":  "",
-                      "target":  null,
-                      "bought":  false,
-                      "notes":  "",
-                      "history":  [
-
-                                  ]
-                  },
-                  {
-                      "category":  "Feeding",
-                      "item":  "Sterilisator / flaskevarmer",
-                      "priority":  "Nice",
-                      "blackWeek":  true,
-                      "qty":  1,
-                      "url":  "",
-                      "target":  null,
-                      "bought":  false,
-                      "notes":  "",
-                      "history":  [
-
-                                  ]
-                  },
-                  {
-                      "category":  "Feeding",
-                      "item":  "Smokker",
-                      "priority":  "Nice",
-                      "blackWeek":  false,
-                      "qty":  3,
-                      "url":  "",
-                      "target":  null,
-                      "bought":  false,
-                      "notes":  "",
-                      "history":  [
-
-                                  ]
-                  },
-                  {
-                      "category":  "Feeding",
-                      "item":  "Gulpekluter / smekker",
-                      "priority":  "Must",
-                      "blackWeek":  false,
-                      "qty":  10,
-                      "url":  "",
-                      "target":  null,
-                      "bought":  false,
-                      "notes":  "",
-                      "history":  [
-
-                                  ]
-                  },
-                  {
-                      "category":  "Clothes",
-                      "item":  "Body str 50/56",
-                      "priority":  "Must",
-                      "blackWeek":  false,
-                      "qty":  7,
-                      "url":  "",
-                      "target":  null,
-                      "bought":  false,
-                      "notes":  "",
-                      "history":  [
-
-                                  ]
-                  },
-                  {
-                      "category":  "Clothes",
-                      "item":  "Body str 62",
-                      "priority":  "Must",
-                      "blackWeek":  false,
-                      "qty":  7,
-                      "url":  "",
-                      "target":  null,
-                      "bought":  false,
-                      "notes":  "",
-                      "history":  [
-
-                                  ]
-                  },
-                  {
-                      "category":  "Clothes",
-                      "item":  "Ullundertøy (ull/silke)",
-                      "priority":  "Must",
-                      "blackWeek":  true,
-                      "qty":  3,
-                      "url":  "",
-                      "target":  null,
-                      "bought":  false,
-                      "notes":  "Wool is the standard base layer in Norway",
-                      "history":  [
-
-                                  ]
-                  },
-                  {
-                      "category":  "Clothes",
-                      "item":  "Bukser / sparkebukser",
-                      "priority":  "Must",
-                      "blackWeek":  false,
-                      "qty":  6,
-                      "url":  "",
-                      "target":  null,
-                      "bought":  false,
-                      "notes":  "",
-                      "history":  [
-
-                                  ]
-                  },
-                  {
-                      "category":  "Clothes",
-                      "item":  "Lue og votter",
-                      "priority":  "Must",
-                      "blackWeek":  false,
-                      "qty":  2,
-                      "url":  "",
-                      "target":  null,
-                      "bought":  false,
-                      "notes":  "",
-                      "history":  [
-
-                                  ]
-                  },
-                  {
-                      "category":  "Clothes",
-                      "item":  "Ulldress / fleecedress",
-                      "priority":  "Must",
-                      "blackWeek":  true,
-                      "qty":  1,
-                      "url":  "",
-                      "target":  null,
-                      "bought":  false,
-                      "notes":  "",
-                      "history":  [
-
-                                  ]
-                  },
-                  {
-                      "category":  "Clothes",
-                      "item":  "Heldress / vinterdress",
-                      "priority":  "Must",
-                      "blackWeek":  true,
-                      "qty":  1,
-                      "url":  "",
-                      "target":  null,
-                      "bought":  false,
-                      "notes":  "Depends on the season baby is born in",
-                      "history":  [
-
-                                  ]
-                  },
-                  {
-                      "category":  "Clothes",
-                      "item":  "Sokker",
-                      "priority":  "Must",
-                      "blackWeek":  false,
-                      "qty":  6,
-                      "url":  "",
-                      "target":  null,
-                      "bought":  false,
-                      "notes":  "",
-                      "history":  [
-
-                                  ]
-                  },
-                  {
-                      "category":  "Play",
-                      "item":  "Vippestol / babysitter",
-                      "priority":  "Nice",
-                      "blackWeek":  true,
-                      "qty":  1,
-                      "url":  "",
-                      "target":  null,
-                      "bought":  false,
-                      "notes":  "",
-                      "history":  [
-
-                                  ]
-                  },
-                  {
-                      "category":  "Play",
-                      "item":  "Lekematte / babygym",
-                      "priority":  "Nice",
-                      "blackWeek":  true,
-                      "qty":  1,
-                      "url":  "",
-                      "target":  null,
-                      "bought":  false,
-                      "notes":  "",
-                      "history":  [
-
-                                  ]
-                  }
-              ]
+  "updated": "2026-10-30 13:45",
+  "checked": 0,
+  "ok": 0,
+  "items": [
+    {
+      "category": "Transport",
+      "item": "Barnevogn (kombivogn med bag + sete)",
+      "priority": "Must",
+      "blackWeek": true,
+      "qty": 1,
+      "url": "",
+      "target": null,
+      "bought": false,
+      "notes": "Biggest purchase - Black Week is worth it here. Check that the bag is approved for sleeping outdoors.",
+      "history": []
+    },
+    {
+      "category": "Transport",
+      "item": "Bilstol / babybag (i-Size 0-13 kg)",
+      "priority": "Must",
+      "blackWeek": true,
+      "qty": 1,
+      "url": "",
+      "target": null,
+      "bought": false,
+      "notes": "Needed for the ride home from the hospital. Rear-facing. Many people rent one instead.",
+      "history": []
+    },
+    {
+      "category": "Transport",
+      "item": "Isofix-base for bilstol",
+      "priority": "Nice",
+      "blackWeek": true,
+      "qty": 1,
+      "url": "",
+      "target": null,
+      "bought": false,
+      "notes": "Check that it fits both the car seat and your car",
+      "history": []
+    },
+    {
+      "category": "Transport",
+      "item": "Vognpose / kjørepose (vinter)",
+      "priority": "Must",
+      "blackWeek": true,
+      "qty": 1,
+      "url": "",
+      "target": null,
+      "bought": false,
+      "notes": "Wool or down for Norwegian winter",
+      "history": []
+    },
+    {
+      "category": "Transport",
+      "item": "Bæresele eller vikle",
+      "priority": "Nice",
+      "blackWeek": true,
+      "qty": 1,
+      "url": "",
+      "target": null,
+      "bought": false,
+      "notes": "",
+      "history": []
+    },
+    {
+      "category": "Transport",
+      "item": "Stellebag / skifteveske",
+      "priority": "Nice",
+      "blackWeek": true,
+      "qty": 1,
+      "url": "",
+      "target": null,
+      "bought": false,
+      "notes": "Often comes with the pram",
+      "history": []
+    },
+    {
+      "category": "Sleep",
+      "item": "Babyseng / sprinkelseng",
+      "priority": "Must",
+      "blackWeek": true,
+      "qty": 1,
+      "url": "",
+      "target": null,
+      "bought": false,
+      "notes": "",
+      "history": []
+    },
+    {
+      "category": "Sleep",
+      "item": "Madrass til seng",
+      "priority": "Must",
+      "blackWeek": true,
+      "qty": 1,
+      "url": "",
+      "target": null,
+      "bought": false,
+      "notes": "Firm and the right size for the bed",
+      "history": []
+    },
+    {
+      "category": "Sleep",
+      "item": "Bedside crib / vugge",
+      "priority": "Nice",
+      "blackWeek": true,
+      "qty": 1,
+      "url": "",
+      "target": null,
+      "bought": false,
+      "notes": "",
+      "history": []
+    },
+    {
+      "category": "Sleep",
+      "item": "Laken (til seng og vogn)",
+      "priority": "Must",
+      "blackWeek": false,
+      "qty": 4,
+      "url": "",
+      "target": null,
+      "bought": false,
+      "notes": "",
+      "history": []
+    },
+    {
+      "category": "Sleep",
+      "item": "Sovepose / babydyne",
+      "priority": "Must",
+      "blackWeek": true,
+      "qty": 2,
+      "url": "",
+      "target": null,
+      "bought": false,
+      "notes": "",
+      "history": []
+    },
+    {
+      "category": "Sleep",
+      "item": "Babycall (lyd/video)",
+      "priority": "Nice",
+      "blackWeek": true,
+      "qty": 1,
+      "url": "",
+      "target": null,
+      "bought": false,
+      "notes": "",
+      "history": []
+    },
+    {
+      "category": "Changing",
+      "item": "Stellebord eller stellematte",
+      "priority": "Must",
+      "blackWeek": true,
+      "qty": 1,
+      "url": "",
+      "target": null,
+      "bought": false,
+      "notes": "",
+      "history": []
+    },
+    {
+      "category": "Changing",
+      "item": "Bleier nyfødt (str 1)",
+      "priority": "Must",
+      "blackWeek": false,
+      "qty": 2,
+      "url": "",
+      "target": null,
+      "bought": false,
+      "notes": "Don't overbuy size 1 - babies grow out of it fast",
+      "history": []
+    },
+    {
+      "category": "Changing",
+      "item": "Våtservietter / vaskekluter",
+      "priority": "Must",
+      "blackWeek": false,
+      "qty": 1,
+      "url": "",
+      "target": null,
+      "bought": false,
+      "notes": "",
+      "history": []
+    },
+    {
+      "category": "Changing",
+      "item": "Bleiebøtte",
+      "priority": "Nice",
+      "blackWeek": true,
+      "qty": 1,
+      "url": "",
+      "target": null,
+      "bought": false,
+      "notes": "",
+      "history": []
+    },
+    {
+      "category": "Changing",
+      "item": "Sinkkrem / bleiesalve",
+      "priority": "Must",
+      "blackWeek": false,
+      "qty": 1,
+      "url": "",
+      "target": null,
+      "bought": false,
+      "notes": "",
+      "history": []
+    },
+    {
+      "category": "Bath & care",
+      "item": "Babybadekar / badestol",
+      "priority": "Must",
+      "blackWeek": true,
+      "qty": 1,
+      "url": "",
+      "target": null,
+      "bought": false,
+      "notes": "",
+      "history": []
+    },
+    {
+      "category": "Bath & care",
+      "item": "Badehåndklær med hette",
+      "priority": "Must",
+      "blackWeek": false,
+      "qty": 2,
+      "url": "",
+      "target": null,
+      "bought": false,
+      "notes": "",
+      "history": []
+    },
+    {
+      "category": "Bath & care",
+      "item": "Digitalt termometer",
+      "priority": "Must",
+      "blackWeek": true,
+      "qty": 1,
+      "url": "",
+      "target": null,
+      "bought": false,
+      "notes": "",
+      "history": []
+    },
+    {
+      "category": "Bath & care",
+      "item": "Neglesaks / neglefil for baby",
+      "priority": "Must",
+      "blackWeek": false,
+      "qty": 1,
+      "url": "",
+      "target": null,
+      "bought": false,
+      "notes": "",
+      "history": []
+    },
+    {
+      "category": "Bath & care",
+      "item": "Nesesuger",
+      "priority": "Nice",
+      "blackWeek": true,
+      "qty": 1,
+      "url": "",
+      "target": null,
+      "bought": false,
+      "notes": "",
+      "history": []
+    },
+    {
+      "category": "Feeding",
+      "item": "Ammepute",
+      "priority": "Nice",
+      "blackWeek": true,
+      "qty": 1,
+      "url": "",
+      "target": null,
+      "bought": false,
+      "notes": "",
+      "history": []
+    },
+    {
+      "category": "Feeding",
+      "item": "Brystpumpe",
+      "priority": "Nice",
+      "blackWeek": true,
+      "qty": 1,
+      "url": "",
+      "target": null,
+      "bought": false,
+      "notes": "Electric pumps are often on sale in Black Week",
+      "history": []
+    },
+    {
+      "category": "Feeding",
+      "item": "Tåteflasker",
+      "priority": "Must",
+      "blackWeek": false,
+      "qty": 4,
+      "url": "",
+      "target": null,
+      "bought": false,
+      "notes": "",
+      "history": []
+    },
+    {
+      "category": "Feeding",
+      "item": "Sterilisator / flaskevarmer",
+      "priority": "Nice",
+      "blackWeek": true,
+      "qty": 1,
+      "url": "",
+      "target": null,
+      "bought": false,
+      "notes": "",
+      "history": []
+    },
+    {
+      "category": "Feeding",
+      "item": "Smokker",
+      "priority": "Nice",
+      "blackWeek": false,
+      "qty": 3,
+      "url": "",
+      "target": null,
+      "bought": false,
+      "notes": "",
+      "history": []
+    },
+    {
+      "category": "Feeding",
+      "item": "Gulpekluter / smekker",
+      "priority": "Must",
+      "blackWeek": false,
+      "qty": 10,
+      "url": "",
+      "target": null,
+      "bought": false,
+      "notes": "",
+      "history": []
+    },
+    {
+      "category": "Clothes",
+      "item": "Body str 50/56",
+      "priority": "Must",
+      "blackWeek": false,
+      "qty": 7,
+      "url": "",
+      "target": null,
+      "bought": false,
+      "notes": "",
+      "history": []
+    },
+    {
+      "category": "Clothes",
+      "item": "Body str 62",
+      "priority": "Must",
+      "blackWeek": false,
+      "qty": 7,
+      "url": "",
+      "target": null,
+      "bought": false,
+      "notes": "",
+      "history": []
+    },
+    {
+      "category": "Clothes",
+      "item": "Ullundertøy (ull/silke)",
+      "priority": "Must",
+      "blackWeek": true,
+      "qty": 3,
+      "url": "",
+      "target": null,
+      "bought": false,
+      "notes": "Wool is the standard base layer in Norway",
+      "history": []
+    },
+    {
+      "category": "Clothes",
+      "item": "Bukser / sparkebukser",
+      "priority": "Must",
+      "blackWeek": false,
+      "qty": 6,
+      "url": "",
+      "target": null,
+      "bought": false,
+      "notes": "",
+      "history": []
+    },
+    {
+      "category": "Clothes",
+      "item": "Lue og votter",
+      "priority": "Must",
+      "blackWeek": false,
+      "qty": 2,
+      "url": "",
+      "target": null,
+      "bought": false,
+      "notes": "",
+      "history": []
+    },
+    {
+      "category": "Clothes",
+      "item": "Ulldress / fleecedress",
+      "priority": "Must",
+      "blackWeek": true,
+      "qty": 1,
+      "url": "",
+      "target": null,
+      "bought": false,
+      "notes": "",
+      "history": []
+    },
+    {
+      "category": "Clothes",
+      "item": "Heldress / vinterdress",
+      "priority": "Must",
+      "blackWeek": true,
+      "qty": 1,
+      "url": "",
+      "target": null,
+      "bought": false,
+      "notes": "Depends on the season baby is born in",
+      "history": []
+    },
+    {
+      "category": "Clothes",
+      "item": "Sokker",
+      "priority": "Must",
+      "blackWeek": false,
+      "qty": 6,
+      "url": "",
+      "target": null,
+      "bought": false,
+      "notes": "",
+      "history": []
+    },
+    {
+      "category": "Play",
+      "item": "Vippestol / babysitter",
+      "priority": "Nice",
+      "blackWeek": true,
+      "qty": 1,
+      "url": "",
+      "target": null,
+      "bought": false,
+      "notes": "",
+      "history": []
+    },
+    {
+      "category": "Play",
+      "item": "Lekematte / babygym",
+      "priority": "Nice",
+      "blackWeek": true,
+      "qty": 1,
+      "url": "",
+      "target": null,
+      "bought": false,
+      "notes": "",
+      "history": []
+    }
+  ]
 }
