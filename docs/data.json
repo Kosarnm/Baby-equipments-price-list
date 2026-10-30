@@ -1,7 +1,7 @@
 {
-  "updated": "2026-10-30 16:05",
-  "checked": 10,
-  "ok": 10,
+  "updated": "2026-10-30 16:22",
+  "checked": 12,
+  "ok": 12,
   "items": [
     {
       "category": "Transport",
@@ -71,6 +71,12 @@
         },
         {
           "date": "2026-10-30 16:05",
+          "price": 13949.0,
+          "shop": "Kjøpbarnevogn",
+          "product": "Bugaboo Fox 5 Renew"
+        },
+        {
+          "date": "2026-10-30 16:22",
           "price": 13949.0,
           "shop": "Kjøpbarnevogn",
           "product": "Bugaboo Fox 5 Renew"
@@ -156,6 +162,12 @@
           "price": 1999.0,
           "shop": "OhDearBaby",
           "product": "Easygrow Fnugg Vognpose"
+        },
+        {
+          "date": "2026-10-30 16:22",
+          "price": 1999.0,
+          "shop": "OhDearBaby",
+          "product": "Easygrow Fnugg Vognpose"
         }
       ]
     },
@@ -215,6 +227,12 @@
         },
         {
           "date": "2026-10-30 16:05",
+          "price": 1866.0,
+          "shop": "Boozt.com",
+          "product": "Ergobaby Omni Breeze"
+        },
+        {
+          "date": "2026-10-30 16:22",
           "price": 1866.0,
           "shop": "Boozt.com",
           "product": "Ergobaby Omni Breeze"
@@ -346,6 +364,12 @@
           "price": 299.0,
           "shop": "barnashus.no",
           "product": "Stokke Sleepi Mini V3 laken, flowerecru"
+        },
+        {
+          "date": "2026-10-30 16:22",
+          "price": 299.0,
+          "shop": "barnashus.no",
+          "product": "Stokke Sleepi Mini V3 laken, flowerecru"
         }
       ]
     },
@@ -403,6 +427,12 @@
           "price": 329.0,
           "shop": "Mimmis",
           "product": "Ergobaby Swaddler Sheep"
+        },
+        {
+          "date": "2026-10-30 16:22",
+          "price": 329.0,
+          "shop": "Mimmis",
+          "product": "Ergobaby Swaddler Sheep"
         }
       ]
     },
@@ -441,6 +471,12 @@
           "price": 699.0,
           "shop": "easygrowofnorway.com",
           "product": "Easygrow Swaddle Baby Bag 0–6 Months – Safe & Soothing Sleep"
+        },
+        {
+          "date": "2026-10-30 16:22",
+          "price": 699.0,
+          "shop": "easygrowofnorway.com",
+          "product": "Easygrow Swaddle Baby Bag 0–6 Months – Safe & Soothing Sleep"
         }
       ]
     },
@@ -470,6 +506,12 @@
         },
         {
           "date": "2026-10-30 16:05",
+          "price": 5149.0,
+          "shop": "Philips",
+          "product": "Philips Premium Connected Baby Monitor SCD973/26"
+        },
+        {
+          "date": "2026-10-30 16:22",
           "price": 5149.0,
           "shop": "Philips",
           "product": "Philips Premium Connected Baby Monitor SCD973/26"
@@ -505,6 +547,12 @@
           "price": 1463.0,
           "shop": "CS MEGASTORE",
           "product": "Philips Avent Baby Monitor SCD643/26"
+        },
+        {
+          "date": "2026-10-30 16:22",
+          "price": 1463.0,
+          "shop": "CS MEGASTORE",
+          "product": "Philips Avent Baby Monitor SCD643/26"
         }
       ]
     },
@@ -531,6 +579,12 @@
           "price": 1199.0,
           "shop": "",
           "product": "Leander Matty Stellematte 50x70"
+        },
+        {
+          "date": "2026-10-30 16:22",
+          "price": 1199.0,
+          "shop": "",
+          "product": "Leander Matty Stellematte 50x70"
         }
       ]
     },
@@ -548,6 +602,12 @@
       "history": [
         {
           "date": "2026-10-30 16:05",
+          "price": 199.0,
+          "shop": "Mimmis",
+          "product": "Leander Topper"
+        },
+        {
+          "date": "2026-10-30 16:22",
           "price": 199.0,
           "shop": "Mimmis",
           "product": "Leander Topper"
@@ -608,16 +668,43 @@
     },
     {
       "category": "Bath & care",
-      "item": "Baby bath / bath seat",
-      "search": "babybadekar",
+      "item": "Baby bath",
+      "search": "stokke flexi bath",
       "priority": "Must",
       "blackWeek": true,
       "qty": 1,
-      "url": "",
+      "url": "https://www.prisjakt.no/product.php?p=6029319",
       "target": null,
       "bought": false,
-      "notes": "",
-      "history": []
+      "notes": "Stokke Flexi Bath - free-standing, folds flat",
+      "history": [
+        {
+          "date": "2026-10-30 16:22",
+          "price": 449.0,
+          "shop": "",
+          "product": "Stokke Flexi Bath"
+        }
+      ]
+    },
+    {
+      "category": "Bath & care",
+      "item": "Bath newborn support",
+      "search": "stokke flexi bath newborn support",
+      "priority": "Must",
+      "blackWeek": true,
+      "qty": 1,
+      "url": "https://www.prisjakt.no/product.php?p=7002681",
+      "target": null,
+      "bought": false,
+      "notes": "Stokke Flexi Bath Newborn Support - for the first months",
+      "history": [
+        {
+          "date": "2026-10-30 16:22",
+          "price": 100.0,
+          "shop": "",
+          "product": "Stokke Flexi Bath Newborn Support"
+        }
+      ]
     },
     {
       "category": "Bath & care",
