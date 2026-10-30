@@ -1,0 +1,21 @@
+name: Test Prisjakt access
+
+# Fetches one Prisjakt product page to check that GitHub's servers are allowed in.
+# Saves nothing. Run it from the Actions tab if the daily check starts failing.
+on:
+  push:
+    paths: ['.github/workflows/test-prisjakt.yml']
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch a product page
+        shell: pwsh
+        run: |
+          $list = Join-Path $env:RUNNER_TEMP 'list.csv'
+          'Category,Item,Priority,BlackWeek,Qty,PrisjaktUrl,TargetPrice,Bought,Notes' | Set-Content $list
+          'Test,Test product,Must,Yes,1,https://www.prisjakt.no/product.php?p=13120797,,,' | Add-Content $list
+          ./track-prices.ps1 -ListFile $list -HistoryFile (Join-Path $env:RUNNER_TEMP 'h.csv') -ReportFile (Join-Path $env:RUNNER_TEMP 'r.html') -NoOpen
