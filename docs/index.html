@@ -18,7 +18,9 @@
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html,body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif}
 header{padding:calc(env(safe-area-inset-top) + 18px) 16px 8px;max-width:680px;margin:0 auto}
+.top{display:flex;align-items:center;justify-content:space-between;gap:8px}
 h1{margin:0;font-size:28px;letter-spacing:-.02em}
+.iconbtn{border:1px solid var(--line);background:var(--card);color:var(--fg);border-radius:99px;width:38px;height:38px;font-size:18px;line-height:1;cursor:pointer}
 .sub{color:var(--muted);font-size:13px}
 .countdown{display:flex;align-items:baseline;gap:8px;margin:14px 0 4px}
 .countdown b{font-size:40px;line-height:1;color:var(--accent)}
@@ -29,7 +31,7 @@ h1{margin:0;font-size:28px;letter-spacing:-.02em}
 .filters::-webkit-scrollbar{display:none}
 .filters button{flex:none;border:1px solid var(--line);background:var(--card);color:var(--fg);border-radius:99px;padding:7px 14px;font:inherit;font-size:14px}
 .filters button.on{background:var(--fg);color:var(--bg);border-color:var(--fg)}
-main{max-width:680px;margin:0 auto;padding:0 16px calc(env(safe-area-inset-bottom) + 40px)}
+main{max-width:680px;margin:0 auto;padding:0 16px calc(env(safe-area-inset-bottom) + 90px)}
 h2{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:22px 4px 8px}
 .card{background:var(--card);border:1px solid var(--line);border-radius:14px;margin-bottom:8px;overflow:hidden}
 .row{display:flex;gap:12px;align-items:center;padding:12px 14px;cursor:pointer}
@@ -42,7 +44,7 @@ h2{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--mute
 .tags{display:flex;gap:4px;flex-wrap:wrap;margin-top:4px}
 .tag{font-size:11px;padding:1px 7px;border-radius:99px;background:var(--chip)}
 .tag.bw{background:var(--fg);color:var(--bg)}.tag.hit,.tag.done{background:var(--good);color:#fff}.tag.low{background:var(--accent);color:#fff}
-.card.bought{opacity:.5}
+.card.bought{opacity:.55}
 .detail{display:none;padding:0 14px 14px;border-top:1px solid var(--line)}
 .card.open .detail{display:block}
 .detail svg{width:100%;height:120px;display:block;margin:12px 0 4px;color:var(--accent)}
@@ -50,16 +52,32 @@ h2{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--mute
 .grid div{background:var(--chip);border-radius:10px;padding:8px}
 .grid b{display:block;font-size:15px}.grid span{font-size:11px;color:var(--muted)}
 .note{font-size:13px;color:var(--muted);font-style:italic;margin:8px 0}
-a.btn{display:block;text-align:center;padding:11px;border-radius:12px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;margin-top:8px}
-a.btn.ghost{background:var(--chip);color:var(--fg)}
+a.btn,button.btn{display:block;width:100%;text-align:center;padding:11px;border-radius:12px;border:0;background:var(--accent);color:#fff;text-decoration:none;font:inherit;font-weight:600;margin-top:8px;cursor:pointer}
+.btn.ghost{background:var(--chip)!important;color:var(--fg)!important}
+.btn.danger{background:transparent!important;color:var(--bad)!important;border:1px solid var(--line)!important}
+.btn:disabled{opacity:.5}
 .banner{background:var(--chip);border-radius:12px;padding:10px 12px;font-size:14px;margin-top:12px}
 .banner.err{background:var(--bad);color:#fff}
+.banner.ok{background:var(--good);color:#fff}
 .empty{color:var(--muted);text-align:center;padding:30px 0}
+.edit{margin-top:12px;padding-top:12px;border-top:1px dashed var(--line)}
+label{display:block;font-size:13px;color:var(--muted);margin:10px 0 4px}
+input[type=text],input[type=url],input[type=number],input[type=password],select,textarea{width:100%;font:inherit;font-size:16px;padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--fg)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.check{display:flex;align-items:center;gap:8px;margin-top:12px;font-size:15px;color:var(--fg)}
+.check input{width:20px;height:20px}
+.fab{position:fixed;right:16px;bottom:calc(env(safe-area-inset-bottom) + 18px);z-index:5;border:0;border-radius:99px;padding:14px 20px;background:var(--accent);color:#fff;font:inherit;font-weight:600;box-shadow:0 6px 20px rgba(0,0,0,.18);cursor:pointer}
+.sheet{position:fixed;inset:0;z-index:10;display:none;background:rgba(0,0,0,.4)}
+.sheet.show{display:block}
+.sheet .panel{position:absolute;left:0;right:0;bottom:0;max-height:92vh;overflow-y:auto;background:var(--card);border-radius:18px 18px 0 0;padding:18px 16px calc(env(safe-area-inset-bottom) + 18px);max-width:680px;margin:0 auto}
+.sheet h3{margin:0 0 4px;font-size:20px}
+.steps{font-size:14px;padding-left:20px;margin:8px 0}
+.steps li{margin:4px 0}
 </style>
 </head>
 <body>
 <header>
-  <h1>Baby prices</h1>
+  <div class="top"><h1>Baby prices</h1><button class="iconbtn" id="openSettings" aria-label="Settings">&#9881;</button></div>
   <div class="sub" id="updated">Loading&hellip;</div>
   <div class="countdown"><b id="days">&ndash;</b><span>days to Black Friday (27 Nov)</span></div>
   <div class="stats">
@@ -79,22 +97,134 @@ a.btn.ghost{background:var(--chip);color:var(--fg)}
   <button data-f="bought">Bought</button>
 </nav>
 <main id="list"></main>
+<button class="fab" id="openAdd">+ Add item</button>
+
+<div class="sheet" id="addSheet"><div class="panel">
+  <h3>Add item</h3>
+  <div class="sub">It's saved to your list on GitHub, and the price is checked within a few minutes.</div>
+  <label for="aName">Item</label><input type="text" id="aName" placeholder="e.g. Bath thermometer">
+  <label for="aCat">Category</label><select id="aCat"></select>
+  <input type="text" id="aCatNew" placeholder="New category name" style="display:none;margin-top:8px">
+  <label for="aUrl">Prisjakt or shop link (optional)</label><input type="url" id="aUrl" placeholder="https://www.prisjakt.no/product.php?p=…">
+  <div class="two">
+    <div><label for="aQty">Quantity</label><input type="number" id="aQty" min="1" value="1" inputmode="numeric"></div>
+    <div><label for="aTarget">Target price (kr)</label><input type="number" id="aTarget" min="0" inputmode="numeric" placeholder="optional"></div>
+  </div>
+  <label for="aNotes">Notes (optional)</label><input type="text" id="aNotes">
+  <label class="check"><input type="checkbox" id="aMust" checked> Must have</label>
+  <label class="check"><input type="checkbox" id="aBw" checked> Buy in Black Week</label>
+  <button class="btn" id="aSave">Add to list</button>
+  <button class="btn ghost" data-close>Cancel</button>
+</div></div>
+
+<div class="sheet" id="setSheet"><div class="panel">
+  <h3>Edit from the app</h3>
+  <div id="setStatus" class="sub"></div>
+  <div id="setForm">
+    <p class="sub">To let the app save changes to your list, create a GitHub key once and paste it here. It's stored only in this browser on this phone, and it can only change this one repository.</p>
+    <ol class="steps">
+      <li>Open <a id="tokLink" target="_blank" rel="noopener" style="color:var(--accent)">GitHub → New fine-grained token</a> and sign in.</li>
+      <li><b>Token name:</b> Baby prices app. <b>Expiration:</b> 90 days.</li>
+      <li><b>Repository access:</b> Only select repositories → <span id="repoName"></span>.</li>
+      <li><b>Permissions → Repository permissions → Contents:</b> Read and write.</li>
+      <li>Tap <b>Generate token</b>, copy it and paste it below.</li>
+    </ol>
+    <label for="tok">GitHub key</label><input type="password" id="tok" placeholder="github_pat_…" autocomplete="off">
+    <button class="btn" id="tokSave">Connect</button>
+  </div>
+  <button class="btn danger" id="tokRemove" style="display:none">Disconnect this phone</button>
+  <button class="btn ghost" data-close>Close</button>
+</div></div>
+
 <script>
 const nb = new Intl.NumberFormat('nb-NO', {maximumFractionDigits: 0});
 const kr = v => v == null ? '–' : nb.format(v) + ' kr';
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
 // Works out the repo from the GitHub Pages address (owner.github.io/repo/).
-const owner = location.hostname.split('.')[0];
-const repo = location.pathname.split('/').filter(Boolean)[0] || '';
+const onPages = location.hostname.endsWith('github.io');
+const owner = onPages ? location.hostname.split('.')[0] : 'Kosarnm';
+const repo = (onPages && location.pathname.split('/').filter(Boolean)[0]) || 'Baby-equipments-price-list';
 const editUrl = `https://github.com/${owner}/${repo}/edit/main/baby-list.csv`;
+const fileApi = `https://api.github.com/repos/${owner}/${repo}/contents/baby-list.csv`;
 
+const store = {
+  get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
+  set(k, v) { try { v == null ? localStorage.removeItem(k) : localStorage.setItem(k, v); } catch (e) {} }
+};
+let token = store.get('ghToken');
 let data = null;
-let filter = 'todo';
-try { filter = localStorage.getItem('filter') || filter; } catch (e) {}
+let filter = store.get('filter') || 'todo';
+const openCards = new Set();
 
+// ---------------------------------------------------------------- list file (CSV) on GitHub
+function parseCSV(text) {
+  const rows = []; let row = [], field = '', q = false;
+  for (let i = 0; i < text.length; i++) {
+    const c = text[i];
+    if (q) {
+      if (c === '"' && text[i + 1] === '"') { field += '"'; i++; }
+      else if (c === '"') q = false;
+      else field += c;
+    } else if (c === '"') q = true;
+    else if (c === ',') { row.push(field); field = ''; }
+    else if (c === '\n' || c === '\r') {
+      if (c === '\r' && text[i + 1] === '\n') i++;
+      row.push(field); rows.push(row); row = []; field = '';
+    } else field += c;
+  }
+  if (field !== '' || row.length) { row.push(field); rows.push(row); }
+  return rows.filter(r => r.some(v => v !== ''));
+}
+const toCSV = rows => rows.map(r => r.map(v => '"' + String(v ?? '').replace(/"/g, '""') + '"').join(',')).join('\n') + '\n';
+
+const b64decode = b => new TextDecoder().decode(Uint8Array.from(atob(b.replace(/\s/g, '')), c => c.charCodeAt(0)));
+function b64encode(s) {
+  const bytes = new TextEncoder().encode(s); let bin = '';
+  for (let i = 0; i < bytes.length; i++) bin += String.fromCharCode(bytes[i]);
+  return btoa(bin);
+}
+
+async function gh(url, opts = {}) {
+  const r = await fetch(url, { ...opts, headers: { Accept: 'application/vnd.github+json', Authorization: 'Bearer ' + token, ...(opts.headers || {}) } });
+  if (!r.ok) { const e = new Error('GitHub ' + r.status); e.status = r.status; throw e; }
+  return r.json();
+}
+
+// Loads the list, lets `change` edit its rows, and saves it back as one commit.
+async function editList(change, message) {
+  for (let attempt = 0; attempt < 2; attempt++) {
+    const file = await gh(fileApi + '?ref=main&t=' + Date.now());
+    const raw = b64decode(file.content);
+    const bom = raw.startsWith('﻿');
+    const rows = parseCSV(bom ? raw.slice(1) : raw);
+    const col = Object.fromEntries(rows[0].map((h, i) => [h, i]));
+    change(rows, col);
+    try {
+      return await gh(fileApi, { method: 'PUT', body: JSON.stringify({ message, content: b64encode((bom ? '﻿' : '') + toCSV(rows)), sha: file.sha, branch: 'main' }) });
+    } catch (e) {
+      if (e.status !== 409 || attempt) throw e;   // list changed meanwhile: reload and try again
+    }
+  }
+}
+
+// Removes ad/tracking parameters from pasted links, keeping the ones that pick a product variant.
+function cleanLink(s) {
+  s = String(s || '').trim();
+  if (!s) return '';
+  try {
+    const u = new URL(s);
+    [...u.searchParams.keys()].forEach(k => {
+      if (/^(utm_|gad_|gclid|gbraid|wbraid|srsltid|clickref|fbclid|pv2|_gl|origin)/i.test(k)) u.searchParams.delete(k);
+    });
+    return u.toString();
+  } catch (e) { return null; }
+}
+const numOrBlank = v => { const n = String(v ?? '').replace(/[^\d]/g, ''); return n ? String(parseInt(n, 10)) : ''; };
+
+// ---------------------------------------------------------------- rendering
 function enrich(it) {
-  const h = it.history || [];
+  const h = it.history || (it.history = []);
   it.now = h.length ? h[h.length - 1].price : null;
   it.first = h.length ? h[0].price : null;
   it.low = h.length ? Math.min(...h.map(p => p.price)) : null;
@@ -118,8 +248,24 @@ function chart(h) {
   </svg><div class="sub" style="display:flex;justify-content:space-between"><span>${esc(h[0].date.slice(0,10))}</span><span>${kr(min)} – ${kr(max)}</span><span>${esc(h[h.length-1].date.slice(0,10))}</span></div>`;
 }
 
+function editForm(it, i) {
+  if (!token) return `<div class="edit"><button class="btn ghost" data-act="connect">Edit this item&hellip;</button></div>`;
+  return `<div class="edit">
+    <label for="u${i}">Prisjakt or shop link</label>
+    <input type="url" id="u${i}" value="${esc(it.url)}" placeholder="Paste a link to track the price">
+    <div class="two">
+      <div><label for="q${i}">Quantity</label><input type="number" id="q${i}" min="1" inputmode="numeric" value="${esc(it.qty)}"></div>
+      <div><label for="t${i}">Target price (kr)</label><input type="number" id="t${i}" min="0" inputmode="numeric" value="${it.target ?? ''}" placeholder="optional"></div>
+    </div>
+    <label class="check"><input type="checkbox" id="b${i}" ${it.bought ? 'checked' : ''}> Bought</label>
+    <button class="btn" data-act="save" data-i="${i}">Save changes</button>
+    <button class="btn danger" data-act="delete" data-i="${i}">Remove from list</button>
+  </div>`;
+}
+
 function card(it, i) {
   const tags = [];
+  if (it.pending) tags.push('<span class="tag">Saving / checking price&hellip;</span>');
   if (it.bought) tags.push('<span class="tag done">Bought</span>');
   if (it.hit) tags.push('<span class="tag hit">Target hit!</span>');
   if (it.history.length > 1 && it.now <= it.low && !it.bought) tags.push('<span class="tag low">Lowest so far</span>');
@@ -131,7 +277,8 @@ function card(it, i) {
     change = `<div class="sub ${pct < 0 ? 'down' : 'up'}">${pct > 0 ? '+' : ''}${pct} %</div>`;
   }
   const search = 'https://www.prisjakt.no/search?search=' + encodeURIComponent(it.search || it.item.replace(/\s*\(.*\)/, ''));
-  return `<div class="card${it.bought ? ' bought' : ''}" data-i="${i}">
+  const tracked = it.url && it.now != null;
+  return `<div class="card${it.bought ? ' bought' : ''}${openCards.has(it.item) ? ' open' : ''}" data-i="${i}">
     <div class="row">
       <div class="name"><div>${esc(it.item)}${it.qty > 1 ? ` <span class="sub">× ${it.qty}</span>` : ''}</div>
         <div class="sub">${esc(it.product || (it.url ? 'Waiting for first check' : 'No product chosen yet'))}</div>
@@ -139,7 +286,7 @@ function card(it, i) {
       <div class="price"><b>${it.now != null ? kr(it.now) : ''}</b>${change}</div>
     </div>
     <div class="detail">
-      ${it.url ? chart(it.history) + `
+      ${tracked ? chart(it.history) + `
       <div class="grid">
         <div><b>${kr(it.low)}</b><span>lowest ${esc(it.lowDate)}</span></div>
         <div><b>${kr(it.first)}</b><span>first seen</span></div>
@@ -148,13 +295,14 @@ function card(it, i) {
       ${it.shop ? `<div class="sub">Cheapest today: ${esc(it.shop)}</div>` : ''}` : ''}
       ${it.notes ? `<div class="note">${esc(it.notes)}</div>` : ''}
       ${it.url ? `<a class="btn" href="${esc(it.url)}" target="_blank" rel="noopener">${/prisjakt\.no/.test(it.url) ? 'Open on Prisjakt' : 'Open in shop'}</a>`
-               : `<a class="btn" href="${search}" target="_blank" rel="noopener">Find on Prisjakt</a>
-                  <a class="btn ghost" href="${editUrl}" target="_blank" rel="noopener">Paste the link into the list</a>`}
+               : `<a class="btn" href="${search}" target="_blank" rel="noopener">Find on Prisjakt</a>`}
+      ${editForm(it, i)}
     </div>
   </div>`;
 }
 
 function render() {
+  if (!data) return;
   const items = data.items;
   const todo = items.filter(i => !i.bought);
   const tracked = todo.filter(i => i.now != null);
@@ -178,34 +326,206 @@ function render() {
   document.querySelectorAll('#filters button').forEach(b => b.classList.toggle('on', b.dataset.f === filter));
 }
 
+function banner(html, cls = '') {
+  document.getElementById('banner').innerHTML = html ? `<div class="banner ${cls}">${html}</div>` : '';
+}
+
+function showError(e) {
+  const msg = e.status === 401 ? 'GitHub didn\'t accept the key. It may have expired: open settings (⚙) and connect again.'
+    : e.status === 403 || e.status === 404 ? 'The GitHub key can\'t change this list. Check that it has access to the repository with Contents: Read and write.'
+    : 'Couldn\'t save to GitHub (' + esc(e.message) + '). Check your connection and try again.';
+  banner(msg, 'err');
+}
+
+// ---------------------------------------------------------------- loading + waiting for the price check
+async function load() {
+  const d = await fetch('data.json?t=' + Date.now()).then(r => r.json());
+  d.items.forEach(enrich);
+  data = d;
+  document.getElementById('updated').innerHTML =
+    `Prices checked ${esc(d.updated)}` + (token ? '' : ` · <a href="${editUrl}" target="_blank" rel="noopener" style="color:var(--accent)">Edit list</a>`);
+  if (d.checked && !d.ok) banner('The last check could not read any prices.', 'err');
+  else if (!d.checked) banner('No products tracked yet. Tap an item and add a Prisjakt or shop link.');
+  render();
+  return d;
+}
+
+let waitTimer = null;
+// After a save, GitHub re-checks prices in a couple of minutes; refresh when the new data is published.
+function waitForUpdate() {
+  const before = data && data.updated;
+  let tries = 0;
+  clearInterval(waitTimer);
+  waitTimer = setInterval(async () => {
+    tries++;
+    try {
+      const d = await fetch('data.json?t=' + Date.now()).then(r => r.json());
+      if (d.updated !== before) { clearInterval(waitTimer); await load(); banner('Prices updated.', 'ok'); setTimeout(() => banner(''), 4000); return; }
+    } catch (e) {}
+    if (tries > 24) { clearInterval(waitTimer); banner('Saved. The new prices are taking longer than usual; pull down to refresh in a few minutes.'); }
+  }, 15000);
+}
+
+// ---------------------------------------------------------------- actions
+async function saveItem(i, btn) {
+  const it = data.items[i];
+  const url = cleanLink(document.getElementById('u' + i).value);
+  if (url === null) { banner('That doesn\'t look like a link. Copy the full address starting with https://', 'err'); return; }
+  const qty = numOrBlank(document.getElementById('q' + i).value) || '1';
+  const target = numOrBlank(document.getElementById('t' + i).value);
+  const bought = document.getElementById('b' + i).checked;
+  btn.disabled = true; btn.textContent = 'Saving…';
+  try {
+    await editList((rows, c) => {
+      const r = rows.find((r, n) => n > 0 && r[c.Item] === it.item);
+      if (!r) throw new Error('item not found in the list');
+      r[c.PrisjaktUrl] = url; r[c.Qty] = qty; r[c.TargetPrice] = target; r[c.Bought] = bought ? 'yes' : '';
+    }, `Update ${it.item} from the app`);
+    const linkChanged = url !== (it.url || '');
+    Object.assign(it, { url, qty: +qty, target: target ? +target : null, bought, pending: linkChanged });
+    if (linkChanged) it.history = [];
+    enrich(it);
+    render();
+    banner('Saved. ' + (linkChanged || url ? 'Prices are re-checked in about 2 minutes.' : ''), 'ok');
+    waitForUpdate();
+  } catch (e) { showError(e); btn.disabled = false; btn.textContent = 'Save changes'; }
+}
+
+async function deleteItem(i) {
+  const it = data.items[i];
+  if (!confirm(`Remove "${it.item}" from the list?`)) return;
+  try {
+    await editList((rows, c) => {
+      const n = rows.findIndex((r, n) => n > 0 && r[c.Item] === it.item);
+      if (n > 0) rows.splice(n, 1);
+    }, `Remove ${it.item} from the app`);
+    data.items.splice(i, 1);
+    render();
+    banner(`Removed "${esc(it.item)}".`, 'ok');
+    waitForUpdate();
+  } catch (e) { showError(e); }
+}
+
+async function addItem() {
+  const name = document.getElementById('aName').value.trim();
+  const catSel = document.getElementById('aCat').value;
+  const cat = catSel === '__new' ? document.getElementById('aCatNew').value.trim() : catSel;
+  const url = cleanLink(document.getElementById('aUrl').value);
+  if (!name) { alert('Give the item a name.'); return; }
+  if (!cat) { alert('Choose or type a category.'); return; }
+  if (url === null) { alert('That doesn\'t look like a link. Copy the full address starting with https://'); return; }
+  let item = name, n = 2;
+  while (data.items.some(x => x.item.toLowerCase() === item.toLowerCase())) item = `${name} (${n++})`;
+  const qty = numOrBlank(document.getElementById('aQty').value) || '1';
+  const target = numOrBlank(document.getElementById('aTarget').value);
+  const must = document.getElementById('aMust').checked, bw = document.getElementById('aBw').checked;
+  const notes = document.getElementById('aNotes').value.trim();
+  const btn = document.getElementById('aSave');
+  btn.disabled = true; btn.textContent = 'Saving…';
+  try {
+    await editList((rows, c) => {
+      const row = rows[0].map(() => '');
+      Object.assign(row, { [c.Category]: cat, [c.Item]: item, [c.PrisjaktSearch]: name, [c.Priority]: must ? 'Must' : 'Nice',
+        [c.BlackWeek]: bw ? 'Yes' : 'No', [c.Qty]: qty, [c.PrisjaktUrl]: url, [c.TargetPrice]: target, [c.Bought]: '', [c.Notes]: notes });
+      let at = rows.length;
+      rows.forEach((r, k) => { if (k > 0 && r[c.Category] === cat) at = k + 1; });   // keep categories together
+      rows.splice(at, 0, row);
+    }, `Add ${item} from the app`);
+    const it = enrich({ category: cat, item, search: name, priority: must ? 'Must' : 'Nice', blackWeek: bw, qty: +qty, url,
+      target: target ? +target : null, bought: false, notes, history: [], pending: !!url });
+    const lastOfCat = data.items.map(x => x.category).lastIndexOf(cat);
+    data.items.splice(lastOfCat >= 0 ? lastOfCat + 1 : data.items.length, 0, it);
+    closeSheets();
+    ['aName', 'aUrl', 'aTarget', 'aNotes', 'aCatNew'].forEach(id => document.getElementById(id).value = '');
+    document.getElementById('aQty').value = '1';
+    filter = 'all'; render();
+    banner(`Added "${esc(item)}".` + (url ? ' The price is checked in about 2 minutes.' : ''), 'ok');
+    waitForUpdate();
+  } catch (e) { showError(e); }
+  btn.disabled = false; btn.textContent = 'Add to list';
+}
+
+// ---------------------------------------------------------------- sheets (add item, settings)
+function closeSheets() { document.querySelectorAll('.sheet').forEach(s => s.classList.remove('show')); }
+function openSettings() {
+  const on = !!token;
+  document.getElementById('setStatus').textContent = on ? 'This phone is connected and can edit the list.' : 'Not connected yet.';
+  document.getElementById('setForm').style.display = on ? 'none' : '';
+  document.getElementById('tokRemove').style.display = on ? '' : 'none';
+  document.getElementById('repoName').textContent = `${owner}/${repo}`;
+  document.getElementById('tokLink').href = 'https://github.com/settings/personal-access-tokens/new';
+  document.getElementById('setSheet').classList.add('show');
+}
+function openAdd() {
+  if (!token) { openSettings(); return; }
+  const cats = [...new Set(data.items.map(x => x.category))];
+  document.getElementById('aCat').innerHTML = cats.map(c => `<option>${esc(c)}</option>`).join('') + '<option value="__new">New category…</option>';
+  document.getElementById('aCatNew').style.display = 'none';
+  document.getElementById('addSheet').classList.add('show');
+  document.getElementById('aName').focus();
+}
+
+document.getElementById('aCat').addEventListener('change', e => {
+  document.getElementById('aCatNew').style.display = e.target.value === '__new' ? '' : 'none';
+});
+document.getElementById('openSettings').addEventListener('click', openSettings);
+document.getElementById('openAdd').addEventListener('click', openAdd);
+document.getElementById('aSave').addEventListener('click', addItem);
+document.querySelectorAll('.sheet').forEach(s => s.addEventListener('click', e => {
+  if (e.target === s || e.target.closest('[data-close]')) closeSheets();
+}));
+document.getElementById('tokSave').addEventListener('click', async () => {
+  const t = document.getElementById('tok').value.trim();
+  if (!t) return;
+  const btn = document.getElementById('tokSave');
+  btn.disabled = true; btn.textContent = 'Checking…';
+  token = t;
+  try {
+    const f = await gh(fileApi + '?ref=main');
+    if (!f.sha) throw new Error('no file');
+    store.set('ghToken', t);
+    document.getElementById('tok').value = '';
+    closeSheets(); await load();
+    banner('Connected. Tap any item to add a link or change it, or use + Add item.', 'ok');
+  } catch (e) {
+    token = null;
+    document.getElementById('setStatus').textContent = e.status === 401
+      ? 'GitHub didn\'t accept that key. Copy it again and paste the whole key.'
+      : 'That key can\'t read this list. Check the repository access and Contents permission.';
+  }
+  btn.disabled = false; btn.textContent = 'Connect';
+});
+document.getElementById('tokRemove').addEventListener('click', () => {
+  token = null; store.set('ghToken', null); closeSheets(); load();
+  banner('This phone is disconnected. You can also delete the key on GitHub under Settings → Developer settings.');
+});
+
 document.getElementById('list').addEventListener('click', e => {
-  if (e.target.closest('a')) return;
+  const act = e.target.closest('[data-act]');
+  if (act) {
+    if (act.dataset.act === 'save') saveItem(+act.dataset.i, act);
+    else if (act.dataset.act === 'delete') deleteItem(+act.dataset.i);
+    else if (act.dataset.act === 'connect') openSettings();
+    return;
+  }
+  if (e.target.closest('a, input, label, .edit')) return;
   const c = e.target.closest('.card');
-  if (c) c.classList.toggle('open');
+  if (!c) return;
+  const name = data.items[+c.dataset.i].item;
+  c.classList.toggle('open') ? openCards.add(name) : openCards.delete(name);
 });
 document.getElementById('filters').addEventListener('click', e => {
   const b = e.target.closest('button');
   if (!b) return;
   filter = b.dataset.f;
-  try { localStorage.setItem('filter', filter); } catch (e) {}
+  store.set('filter', filter);
   render();
 });
 
 const days = Math.max(0, Math.ceil((new Date('2026-11-27T00:00:00+01:00') - new Date()) / 864e5));
 document.getElementById('days').textContent = days;
 
-fetch('data.json?t=' + Date.now()).then(r => r.json()).then(d => {
-  data = d;
-  d.items.forEach(enrich);
-  document.getElementById('updated').innerHTML =
-    `Prices checked ${esc(d.updated)} · <a href="${editUrl}" target="_blank" rel="noopener" style="color:var(--accent)">Edit list</a>`;
-  const b = document.getElementById('banner');
-  if (d.checked && !d.ok) b.innerHTML = '<div class="banner err">The last check could not read any prices from Prisjakt.</div>';
-  else if (!d.checked) b.innerHTML = '<div class="banner">No products tracked yet. Tap an item, find it on Prisjakt and paste the link into the list.</div>';
-  render();
-}).catch(() => {
-  document.getElementById('updated').textContent = 'Could not load the price data.';
-});
+load().catch(() => { document.getElementById('updated').textContent = 'Could not load the price data.'; });
 </script>
 </body>
 </html>
