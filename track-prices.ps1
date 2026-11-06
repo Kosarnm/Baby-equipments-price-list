@@ -48,6 +48,7 @@ function Get-Html([string]$url) {
         } catch {
             $code = 0
             if ($_.Exception.Response) { $code = [int]$_.Exception.Response.StatusCode }
+            if ($_.Exception.Message -match 'Invalid URI') { throw 'the shop redirected to a page that could not be opened (it may not allow price checks from outside Norway)' }
             if ($try -ge 3 -or $code -notin 429, 503) {
                 if ($code) { throw "the shop answered HTTP $code" + $(if ($code -in 401, 403) { ' (it blocks automatic price checks)' } elseif ($code -eq 429) { ' (too many requests)' } elseif ($code -eq 404) { ' (page not found - check the link)' } else { '' }) }
                 throw
