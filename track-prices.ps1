@@ -40,7 +40,21 @@ function Get-Target($text) {
 }
 
 function Get-Html([string]$url) {
-    $resp = Invoke-WebRequest -UseBasicParsing -Uri $url -Headers $headers -TimeoutSec 30
+    # Shops that rate-limit (HTTP 429) or are briefly down (503) get a couple more tries.
+    for ($try = 1; ; $try++) {
+        try {
+            $resp = Invoke-WebRequest -UseBasicParsing -Uri $url -Headers $headers -TimeoutSec 30
+            break
+        } catch {
+            $code = 0
+            if ($_.Exception.Response) { $code = [int]$_.Exception.Response.StatusCode }
+            if ($try -ge 3 -or $code -notin 429, 503) {
+                if ($code) { throw "the shop answered HTTP $code" + $(if ($code -in 401, 403) { ' (it blocks automatic price checks)' } elseif ($code -eq 429) { ' (too many requests)' } elseif ($code -eq 404) { ' (page not found - check the link)' } else { '' }) }
+                throw
+            }
+            Start-Sleep -Seconds (20 * $try)
+        }
+    }
     # Decode as UTF-8 ourselves so Norwegian letters survive.
     $resp.RawContentStream.Position = 0
     return (New-Object IO.StreamReader($resp.RawContentStream, [Text.Encoding]::UTF8)).ReadToEnd()
@@ -139,6 +153,7 @@ $delim = if ((Get-Content -Path $ListFile -TotalCount 1 -Encoding UTF8) -match '
 $list = @(Import-Csv -Path $ListFile -Delimiter $delim -Encoding UTF8)
 $now  = Get-Date -Format 'yyyy-MM-dd HH:mm'
 $new  = @()
+$errors = @{}   # url -> why its price couldn't be read this time (shown in the app)
 # The PrisjaktUrl column also accepts a link straight to a shop's product page.
 $tracked = @($list | Where-Object { $_.PrisjaktUrl -match '^\s*https?://' })
 
@@ -154,6 +169,7 @@ foreach ($row in $tracked) {
         }
     } catch {
         Write-Warning "  $($row.Item): $($_.Exception.Message)"
+        $errors[$row.PrisjaktUrl.Trim()] = $_.Exception.Message
     }
     Start-Sleep -Seconds (Get-Random -Minimum 2 -Maximum 5)   # be polite to Prisjakt
 }
@@ -172,6 +188,7 @@ if ($JsonFile) {
             blackWeek = ($row.BlackWeek -eq 'Yes'); qty = [Math]::Max(1, [int]("0$($row.Qty)" -replace '\D', ''))
             url = $url; target = (Get-Target $row.TargetPrice)
             bought = ($row.Bought -match '^(y|yes|ja|x|1|true)$'); notes = $row.Notes
+            error = $(if ($url) { $errors[$url] } else { $null })
             history = @($history | Where-Object { $url -and $_.Url -eq $url } | Sort-Object Date | ForEach-Object {
                 [ordered]@{ date = $_.Date; price = [double]$_.Price; shop = $_.Shop; product = $_.Product } })
         }

@@ -43,7 +43,7 @@ h2{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--mute
 .down{color:var(--good)}.up{color:var(--bad)}
 .tags{display:flex;gap:4px;flex-wrap:wrap;margin-top:4px}
 .tag{font-size:11px;padding:1px 7px;border-radius:99px;background:var(--chip)}
-.tag.bw{background:var(--fg);color:var(--bg)}.tag.hit,.tag.done{background:var(--good);color:#fff}.tag.low{background:var(--accent);color:#fff}
+.tag.bw{background:var(--fg);color:var(--bg)}.tag.err{background:var(--bad);color:#fff}.tag.hit,.tag.done{background:var(--good);color:#fff}.tag.low{background:var(--accent);color:#fff}
 .card.bought{opacity:.55}
 .detail{display:none;padding:0 14px 14px;border-top:1px solid var(--line)}
 .card.open .detail{display:block}
@@ -266,6 +266,7 @@ function editForm(it, i) {
 function card(it, i) {
   const tags = [];
   if (it.pending) tags.push('<span class="tag">Saving / checking price&hellip;</span>');
+  else if (it.error) tags.push('<span class="tag err">Price check failed</span>');
   if (it.bought) tags.push('<span class="tag done">Bought</span>');
   if (it.hit) tags.push('<span class="tag hit">Target hit!</span>');
   if (it.history.length > 1 && it.now <= it.low && !it.bought) tags.push('<span class="tag low">Lowest so far</span>');
@@ -293,6 +294,7 @@ function card(it, i) {
         <div><b>${kr(it.target)}</b><span>your target</span></div>
       </div>
       ${it.shop ? `<div class="sub">Cheapest today: ${esc(it.shop)}</div>` : ''}` : ''}
+      ${it.error && !it.pending ? `<div class="banner err" style="margin-top:12px">The last check couldn't read the price: ${esc(it.error)}.${it.now != null ? ` Showing the last price found (${esc(it.history[it.history.length - 1].date.slice(0, 10))}).` : ''} If this keeps happening, try a Prisjakt link for the same product instead.</div>` : ''}
       ${it.notes ? `<div class="note">${esc(it.notes)}</div>` : ''}
       ${it.url ? `<a class="btn" href="${esc(it.url)}" target="_blank" rel="noopener">${/prisjakt\.no/.test(it.url) ? 'Open on Prisjakt' : 'Open in shop'}</a>`
                : `<a class="btn" href="${search}" target="_blank" rel="noopener">Find on Prisjakt</a>`}
@@ -344,7 +346,9 @@ async function load() {
   data = d;
   document.getElementById('updated').innerHTML =
     `Prices checked ${esc(d.updated)}` + (token ? '' : ` · <a href="${editUrl}" target="_blank" rel="noopener" style="color:var(--accent)">Edit list</a>`);
+  const failed = d.items.filter(i => i.error).length;
   if (d.checked && !d.ok) banner('The last check could not read any prices.', 'err');
+  else if (failed) banner(`${failed} price${failed > 1 ? 's' : ''} couldn't be read on the last check. Look for the red "Price check failed" label.`);
   else if (!d.checked) banner('No products tracked yet. Tap an item and add a Prisjakt or shop link.');
   render();
   return d;
@@ -383,7 +387,7 @@ async function saveItem(i, btn) {
     }, `Update ${it.item} from the app`);
     const linkChanged = url !== (it.url || '');
     Object.assign(it, { url, qty: +qty, target: target ? +target : null, bought, pending: linkChanged });
-    if (linkChanged) it.history = [];
+    if (linkChanged) { it.history = []; it.error = null; }
     enrich(it);
     render();
     banner('Saved. ' + (linkChanged || url ? 'Prices are re-checked in about 2 minutes.' : ''), 'ok');

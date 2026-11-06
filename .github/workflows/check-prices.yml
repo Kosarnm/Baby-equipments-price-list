@@ -2,7 +2,7 @@ name: Check Prisjakt prices
 
 on:
   schedule:
-    - cron: '0 6 * * *'      # every day, 07:00 Norwegian time (06:00 UTC)
+    - cron: '23 5 * * *'     # every day around 06:23 Norwegian time; GitHub delays runs set on the full hour the most
   push:
     paths: ['baby-list.csv', 'track-prices.ps1']  # re-check right after the list or tracker changes
   workflow_dispatch:          # "Run workflow" button on the Actions tab
@@ -34,5 +34,9 @@ jobs:
           git add docs/data.json
           if [ -f price-history.csv ]; then git add price-history.csv; fi
           git diff --cached --quiet || git commit -m "Prices $(date +'%Y-%m-%d %H:%M')"
-          git pull --rebase
-          git push
+          # A list change saved from the app can land between pull and push; retry a few times.
+          for i in 1 2 3 4 5; do
+            git pull --rebase && git push && exit 0
+            sleep $((i * 10))
+          done
+          exit 1
