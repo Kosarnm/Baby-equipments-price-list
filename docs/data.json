@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-13 14:14",
+  "updated": "2026-11-14 13:19",
   "checked": 21,
   "ok": 20,
   "items": [
@@ -219,6 +219,12 @@
           "price": 11999.0,
           "shop": "Kjøpbarnevogn",
           "product": "Bugaboo Fox 5 Renew - Black Friday: fra 11 999 kr"
+        },
+        {
+          "date": "2026-11-14 13:19",
+          "price": 11999.0,
+          "shop": "Kjøpbarnevogn",
+          "product": "Bugaboo Fox 5 Renew - Black Friday: fra 11 999 kr"
         }
       ]
     },
@@ -417,6 +423,12 @@
         },
         {
           "date": "2026-11-13 14:14",
+          "price": 1999.0,
+          "shop": "OhDearBaby",
+          "product": "Easygrow Fnugg Vognpose - Black Friday: fra 1 999 kr"
+        },
+        {
+          "date": "2026-11-14 13:19",
           "price": 1999.0,
           "shop": "OhDearBaby",
           "product": "Easygrow Fnugg Vognpose - Black Friday: fra 1 999 kr"
@@ -624,6 +636,12 @@
         },
         {
           "date": "2026-11-13 14:14",
+          "price": 2058.0,
+          "shop": "Apotea",
+          "product": "Ergobaby Omni Breeze - Black Friday: fra 2 058 kr"
+        },
+        {
+          "date": "2026-11-14 13:19",
           "price": 2058.0,
           "shop": "Apotea",
           "product": "Ergobaby Omni Breeze - Black Friday: fra 2 058 kr"
@@ -892,6 +910,12 @@
           "price": 299.0,
           "shop": "barnashus.no",
           "product": "Stokke Sleepi Mini V3 laken, flowerecru"
+        },
+        {
+          "date": "2026-11-14 13:19",
+          "price": 299.0,
+          "shop": "barnashus.no",
+          "product": "Stokke Sleepi Mini V3 laken, flowerecru"
         }
       ]
     },
@@ -1095,6 +1119,12 @@
           "price": 289.0,
           "shop": "Mimmis",
           "product": "Ergobaby Swaddler Sheep - Black Friday: fra 289 kr"
+        },
+        {
+          "date": "2026-11-14 13:19",
+          "price": 289.0,
+          "shop": "Mimmis",
+          "product": "Ergobaby Swaddler Sheep - Black Friday: fra 289 kr"
         }
       ]
     },
@@ -1278,6 +1308,12 @@
           "price": 699.0,
           "shop": "easygrowofnorway.com",
           "product": "Easygrow Swaddle Baby Bag 0–6 Months – Safe & Soothing Sleep"
+        },
+        {
+          "date": "2026-11-14 13:19",
+          "price": 699.0,
+          "shop": "easygrowofnorway.com",
+          "product": "Easygrow Swaddle Baby Bag 0–6 Months – Safe & Soothing Sleep"
         }
       ]
     },
@@ -1452,6 +1488,12 @@
         },
         {
           "date": "2026-11-13 14:14",
+          "price": 5249.0,
+          "shop": "Philips",
+          "product": "Philips Premium Tilkoblet Baby Monitor SCD973/26 - Black Friday: fra 5 249 kr"
+        },
+        {
+          "date": "2026-11-14 13:19",
           "price": 5249.0,
           "shop": "Philips",
           "product": "Philips Premium Tilkoblet Baby Monitor SCD973/26 - Black Friday: fra 5 249 kr"
@@ -1632,6 +1674,12 @@
           "price": 1506.0,
           "shop": "CS MEGASTORE",
           "product": "Philips Avent Baby Monitor SCD643/26 - Black Friday: fra 1 506 kr"
+        },
+        {
+          "date": "2026-11-14 13:19",
+          "price": 1457.0,
+          "shop": "CS MEGASTORE",
+          "product": "Philips Avent Baby Monitor SCD643/26 - Black Friday: fra 1 457 kr"
         }
       ]
     },
@@ -1740,6 +1788,12 @@
         },
         {
           "date": "2026-11-13 14:14",
+          "price": 2399.0,
+          "shop": "lampegiganten.no",
+          "product": "Taklampe til barnerommet «Max», hvit/fargerik, Ø 50 cm"
+        },
+        {
+          "date": "2026-11-14 13:19",
           "price": 2399.0,
           "shop": "lampegiganten.no",
           "product": "Taklampe til barnerommet «Max», hvit/fargerik, Ø 50 cm"
@@ -1914,6 +1968,12 @@
           "price": 999.0,
           "shop": "Mimmis",
           "product": "Leander Matty Stellematte 50x70 - Black Friday: fra 999 kr"
+        },
+        {
+          "date": "2026-11-14 13:19",
+          "price": 999.0,
+          "shop": "Mimmis",
+          "product": "Leander Matty Stellematte 50x70 - Black Friday: fra 999 kr"
         }
       ]
     },
@@ -2079,6 +2139,12 @@
           "price": 199.0,
           "shop": "Mimmis",
           "product": "Leander Topper  - Black Friday: fra 199 kr"
+        },
+        {
+          "date": "2026-11-14 13:19",
+          "price": 199.0,
+          "shop": "Mimmis",
+          "product": "Leander Topper  - Black Friday: fra 199 kr"
         }
       ]
     },
@@ -2208,6 +2274,12 @@
           "price": 171.0,
           "shop": "Boozt.com",
           "product": "Done By Deer Vikbar Stellematte - Black Friday: fra 171 kr"
+        },
+        {
+          "date": "2026-11-14 13:19",
+          "price": 172.0,
+          "shop": "Pyret & Snäckan",
+          "product": "Done By Deer Vikbar Stellematte - Black Friday: fra 172 kr"
         }
       ]
     },
@@ -2377,6 +2449,12 @@
           "price": 299.0,
           "shop": "barnashus.no",
           "product": "Bleiebøtte, white"
+        },
+        {
+          "date": "2026-11-14 13:19",
+          "price": 299.0,
+          "shop": "barnashus.no",
+          "product": "Bleiebøtte, white"
         }
       ]
     },
@@ -2479,6 +2557,12 @@
         },
         {
           "date": "2026-11-13 14:14",
+          "price": 109.0,
+          "shop": "farmasiet.no",
+          "product": "Dr. Greve Pharma Baby Sinksalve, 50 ml"
+        },
+        {
+          "date": "2026-11-14 13:19",
           "price": 109.0,
           "shop": "farmasiet.no",
           "product": "Dr. Greve Pharma Baby Sinksalve, 50 ml"
@@ -2641,6 +2725,12 @@
           "price": 449.0,
           "shop": "",
           "product": "Stokke Flexi Bath - Black Friday: fra 449 kr"
+        },
+        {
+          "date": "2026-11-14 13:19",
+          "price": 449.0,
+          "shop": "",
+          "product": "Stokke Flexi Bath - Black Friday: fra 449 kr"
         }
       ]
     },
@@ -2797,6 +2887,12 @@
         },
         {
           "date": "2026-11-13 14:14",
+          "price": 100.0,
+          "shop": "",
+          "product": "Stokke Flexi Bath Newborn Support - Black Friday: fra 100 kr"
+        },
+        {
+          "date": "2026-11-14 13:19",
           "price": 100.0,
           "shop": "",
           "product": "Stokke Flexi Bath Newborn Support - Black Friday: fra 100 kr"
@@ -2981,6 +3077,12 @@
           "price": 299.0,
           "shop": "barnashus.no",
           "product": "Trimmy elektrisk negleklipper, sagegreen"
+        },
+        {
+          "date": "2026-11-14 13:19",
+          "price": 299.0,
+          "shop": "barnashus.no",
+          "product": "Trimmy elektrisk negleklipper, sagegreen"
         }
       ]
     },
@@ -3156,6 +3258,12 @@
           "price": 329.0,
           "shop": "jollyroom.no",
           "product": "Philips Avent SCF430/01 Brystpumpe Manuell"
+        },
+        {
+          "date": "2026-11-14 13:19",
+          "price": 329.0,
+          "shop": "jollyroom.no",
+          "product": "Philips Avent SCF430/01 Brystpumpe Manuell"
         }
       ]
     },
@@ -3303,6 +3411,12 @@
           "price": 1462.0,
           "shop": "philips.no",
           "product": "Avent Hands-free Enkel elektrisk brystpumpe"
+        },
+        {
+          "date": "2026-11-14 13:19",
+          "price": 1462.0,
+          "shop": "philips.no",
+          "product": "Avent Hands-free Enkel elektrisk brystpumpe"
         }
       ]
     },
@@ -3425,6 +3539,12 @@
         },
         {
           "date": "2026-11-13 14:14",
+          "price": 699.0,
+          "shop": "lysterapi.no",
+          "product": "Lysro™ Ammelampe"
+        },
+        {
+          "date": "2026-11-14 13:19",
           "price": 699.0,
           "shop": "lysterapi.no",
           "product": "Lysro™ Ammelampe"
